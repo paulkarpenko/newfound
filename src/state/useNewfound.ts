@@ -79,6 +79,11 @@ interface NewfoundState {
   /** Monotonic counter so repeated pulses on the same clause re-fire the animation. */
   pulseToken: number;
 
+  /** True while the reader is actively panning / zooming. The World container
+   * uses this to gate `will-change: transform`, which trades GPU-cached
+   * smoothness during interaction for crisp text re-rasterization when idle. */
+  interacting: boolean;
+
   theme: ThemeName;
 
   setTransform(t: Transform): void;
@@ -110,6 +115,8 @@ interface NewfoundState {
 
   pulseClause(id: string): void;
   clearPulse(id: string): void;
+
+  setInteracting(value: boolean): void;
 
   setTheme(t: ThemeName): void;
 }
@@ -145,6 +152,7 @@ export const useNewfound = create<NewfoundState>((set) => ({
   detailFocusToken: 0,
   pulseClauseId: null,
   pulseToken: 0,
+  interacting: false,
   theme: 'light',
 
   setTransform: (t) =>
@@ -298,6 +306,8 @@ export const useNewfound = create<NewfoundState>((set) => ({
     set((s) => ({ pulseClauseId: id, pulseToken: s.pulseToken + 1 })),
   clearPulse: (id) =>
     set((s) => (s.pulseClauseId === id ? { pulseClauseId: null } : s)),
+
+  setInteracting: (value) => set({ interacting: value }),
 
   setTheme: (t) => set({ theme: t }),
 }));

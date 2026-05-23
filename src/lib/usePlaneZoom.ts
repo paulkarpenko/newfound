@@ -73,9 +73,15 @@ export function usePlaneZoom(
         if (target && target.isContentEditable) return false;
         return true;
       })
+      .on('start', () => {
+        useNewfound.getState().setInteracting(true);
+      })
       .on('zoom', (event: D3ZoomEvent<HTMLDivElement, unknown>) => {
         const { x, y, k } = event.transform;
         setTransform({ x, y, k });
+      })
+      .on('end', () => {
+        useNewfound.getState().setInteracting(false);
       });
 
     const sel = select(el);
