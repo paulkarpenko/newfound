@@ -20,7 +20,12 @@ export default function ExplanationPanel() {
   const explanation = useNewfound((s) => s.explanation);
   const close = useNewfound((s) => s.closeExplanation);
   const pin = useNewfound((s) => s.pinExplanation);
+  const appendSidebarTurn = useNewfound((s) => s.appendSidebarTurn);
+  const openSidebar = useNewfound((s) => s.openSidebar);
+  const sidebarTurns = useNewfound((s) => s.sidebarTurns);
   const k = useNewfound((s) => s.transform.k);
+
+  const [question, setQuestion] = useState('');
 
   useEffect(() => {
     if (!explanation) return;
@@ -135,6 +140,43 @@ Explain what this phrase means and why it matters, briefly.`;
     (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
   };
 
+  /**
+   * Submit a question — opens the sidebar and seeds it with a context
+   * block (which clause + which phrase) followed by the question. The
+   * sidebar autonomously streams Claude's reply.
+   *
+   * If the sidebar already has turns, we still append a context block
+   * for THIS selection so the model can reference it; the prior thread
+   * stays intact.
+   */
+  const submitQuestion = () => {
+    const text = question.trim();
+    if (!text || !explanation || !clause) return;
+    const citation = clause.heading
+      ? `${clause.citation} — ${clause.heading}`
+      : clause.citation;
+    // Avoid emitting a duplicate context block when the reader fires
+    // multiple questions on the same selection within one session.
+    const lastContextId = [...sidebarTurns].reverse().find((t) => t.role === 'context')?.id;
+    const ctxKey = `ctx-${explanation.clauseId}-${hashStr(explanation.exact)}`;
+    if (lastContextId !== ctxKey) {
+      appendSidebarTurn({
+        id: ctxKey,
+        role: 'context',
+        content: '',
+        citation,
+        exact: explanation.exact,
+      });
+    }
+    appendSidebarTurn({
+      id: `u-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+      role: 'user',
+      content: text,
+    });
+    openSidebar();
+    setQuestion('');
+  };
+
   // Leader line geometry in the world's own SVG (positioned at corpus bounds).
   const bounds = corpusBounds();
   const ax = explanation.worldX - bounds.x;
@@ -207,7 +249,7 @@ Explain what this phrase means and why it matters, briefly.`;
             className="font-smallcaps"
             style={{ color: 'var(--nf-focus)', flex: 1 }}
           >
-            {liveMode ? '? live' : '? plain English'}
+            {liveMode ? 'live' : 'plain English'}
           </span>
           <button
             type="button"
@@ -319,7 +361,79 @@ Explain what this phrase means and why it matters, briefly.`;
             {concept ? 'an explanation, not the text itself' : 'live answer — verify before citing'}
           </p>
         </div>
+
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            submitQuestion();
+          }}
+          style={{
+            borderTop: '1px solid var(--nf-rule)',
+            padding: 8,
+            background: 'var(--nf-panel-deep)',
+            display: 'flex',
+            gap: 6,
+            alignItems: 'flex-end',
+          }}
+        >
+          <textarea
+            value={question}
+            onChange={(e) => setQuestion(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                submitQuestion();
+              }
+            }}
+            rows={1}
+            placeholder="Ask a follow-up about this phrase…"
+            style={{
+              flex: 1,
+              background: 'var(--nf-canvas)',
+              color: 'var(--nf-ink)',
+              border: '1px solid var(--nf-rule)',
+              borderRadius: 3,
+              padding: '6px 8px',
+              fontFamily: 'Source Serif 4, serif',
+              fontSize: 12.5,
+              lineHeight: 1.45,
+              resize: 'none',
+              outline: 'none',
+              minHeight: 32,
+              maxHeight: 96,
+            }}
+          />
+          <button
+            type="submit"
+            data-explanation-button
+            disabled={!question.trim()}
+            aria-label="Ask in sidebar"
+            style={{
+              fontFamily: 'Inter, ui-sans-serif, system-ui, sans-serif',
+              textTransform: 'lowercase',
+              letterSpacing: '0.12em',
+              fontSize: 10,
+              fontWeight: 600,
+              padding: '6px 10px',
+              background: question.trim() ? 'var(--nf-focus)' : 'var(--nf-panel)',
+              color: question.trim() ? '#fff' : 'var(--nf-ink-whisper)',
+              border: '1px solid var(--nf-focus)',
+              borderRadius: 3,
+              cursor: question.trim() ? 'pointer' : 'not-allowed',
+              alignSelf: 'stretch',
+            }}
+          >
+            ask
+          </button>
+        </form>
       </div>
     </>
   );
+}
+
+/** Stable short hash for memoizing context-turn ids. */
+function hashStr(s: string): string {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+  return Math.abs(h).toString(36);
 }

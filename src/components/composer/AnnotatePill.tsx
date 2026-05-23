@@ -70,7 +70,6 @@ export default function AnnotatePill() {
       <PillButton
         onClick={onExplain}
         ariaLabel="Explain the selected text in plain language"
-        glyph="?"
         label="explain"
         accent
       />
@@ -95,7 +94,7 @@ export default function AnnotatePill() {
 interface PillButtonProps {
   onClick: () => void;
   ariaLabel: string;
-  glyph: string;
+  glyph?: string;
   label: string;
   accent?: boolean;
 }
@@ -121,7 +120,7 @@ function PillButton({ onClick, ariaLabel, glyph, label, accent }: PillButtonProp
         gap: 4,
       }}
     >
-      <span aria-hidden style={{ fontSize: 11 }}>{glyph}</span>
+      {glyph && <span aria-hidden style={{ fontSize: 11 }}>{glyph}</span>}
       {label}
     </button>
   );

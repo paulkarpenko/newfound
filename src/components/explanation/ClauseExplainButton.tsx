@@ -54,7 +54,6 @@ export default function ClauseExplainButton({ clauseId }: Props) {
         (e.currentTarget as HTMLElement).style.opacity = '0.7';
       }}
     >
-      <span aria-hidden style={{ fontSize: 11, lineHeight: 1 }}>?</span>
       explain
     </button>
   );

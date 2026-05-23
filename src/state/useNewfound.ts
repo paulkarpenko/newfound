@@ -73,6 +73,11 @@ interface NewfoundState {
   /** Active clause chat — full-clause "explain this section" chat panel. */
   clauseChat: ClauseChatState | null;
 
+  /** Right-edge question sidebar. Persists across selections; the
+   *  conversation history is the "context" that's kept throughout. */
+  sidebarOpen: boolean;
+  sidebarTurns: SidebarTurn[];
+
   /** Detail modal — central modal showing all annotations on a span. */
   detailSpanId: string | null;
   /** Initial annotation to scroll into view inside the detail modal. */
@@ -127,6 +132,12 @@ interface NewfoundState {
   closeClauseChat(): void;
   pinClauseChat(at: { x: number; y: number } | null): void;
 
+  openSidebar(): void;
+  closeSidebar(): void;
+  clearSidebar(): void;
+  appendSidebarTurn(turn: SidebarTurn): void;
+  updateSidebarTurn(id: string, patch: Partial<SidebarTurn>): void;
+
   pulseClause(id: string): void;
   clearPulse(id: string): void;
 
@@ -165,6 +176,23 @@ export interface ClauseChatState {
   pinnedAt?: { x: number; y: number };
 }
 
+/**
+ * One turn in the question sidebar conversation. The sidebar streams
+ * Claude responses by appending an `assistant` turn with `streaming: true`
+ * and patching its content as deltas arrive.
+ */
+export interface SidebarTurn {
+  id: string;
+  role: 'user' | 'assistant' | 'context';
+  content: string;
+  streaming?: boolean;
+  error?: boolean;
+  /** For 'context' turns: a citation chip shown above the prose. */
+  citation?: string;
+  /** For 'context' turns: the exact phrase the user selected. */
+  exact?: string;
+}
+
 /** A pending text selection captured by the composer. */
 export interface ComposerSelection {
   clauseId: string;
@@ -196,6 +224,8 @@ export const useNewfound = create<NewfoundState>((set) => ({
   detailFocusToken: 0,
   explanation: null,
   clauseChat: null,
+  sidebarOpen: false,
+  sidebarTurns: [],
   pulseClauseId: null,
   pulseToken: 0,
   interacting: false,
@@ -362,6 +392,16 @@ export const useNewfound = create<NewfoundState>((set) => ({
     set((s) =>
       s.clauseChat ? { clauseChat: { ...s.clauseChat, pinnedAt: at ?? undefined } } : s,
     ),
+
+  openSidebar: () => set({ sidebarOpen: true }),
+  closeSidebar: () => set({ sidebarOpen: false }),
+  clearSidebar: () => set({ sidebarTurns: [] }),
+  appendSidebarTurn: (turn) =>
+    set((s) => ({ sidebarTurns: [...s.sidebarTurns, turn] })),
+  updateSidebarTurn: (id, patch) =>
+    set((s) => ({
+      sidebarTurns: s.sidebarTurns.map((t) => (t.id === id ? { ...t, ...patch } : t)),
+    })),
 
   pulseClause: (id) =>
     set((s) => ({ pulseClauseId: id, pulseToken: s.pulseToken + 1 })),

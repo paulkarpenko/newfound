@@ -15,6 +15,7 @@ import Composer from '@/components/composer/Composer';
 import AnnotatePill from '@/components/composer/AnnotatePill';
 import ExplanationPanel from '@/components/explanation/ExplanationPanel';
 import ClauseChatPanel from '@/components/explanation/ClauseChatPanel';
+import QuestionSidebar from '@/components/explanation/QuestionSidebar';
 import AnnotationDetailModal from '@/components/detail/AnnotationDetailModal';
 import ClauseOutline from '@/components/a11y/ClauseOutline';
 import { useNewfound } from '@/state/useNewfound';
@@ -126,6 +127,7 @@ export default function Reader() {
       {/* Screen-space surfaces that should not scale with the plane. */}
       <AnnotatePill />
       <Composer />
+      <QuestionSidebar />
       <AnnotationDetailModal />
 
       {/* Screen-space chrome. */}

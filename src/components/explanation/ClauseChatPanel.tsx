@@ -347,7 +347,6 @@ export default function ClauseChatPanel() {
             userSelect: 'none',
           }}
         >
-          <span aria-hidden style={{ color: 'var(--nf-focus)', fontSize: 14, lineHeight: 1 }}>?</span>
           <div style={{ flex: 1, minWidth: 0 }}>
             <p
               style={{
