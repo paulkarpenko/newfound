@@ -1,0 +1,563 @@
+{
+  "metadata": {
+    "project": "trump_action_constitution_crosswalk",
+    "asOf": "2026-05-22",
+    "actionSpine": "Just Security Litigation Tracker",
+    "trackerBaseUrl": "https://www.justsecurity.org/107087/tracker-litigation-legal-challenges-trump-administration/",
+    "rule": "A link exists only where the action can be tied directly to the constitutional concept the cited text is meant to secure."
+  },
+  "provisions": [
+    {
+      "ref": "ART1-S1-VEST",
+      "clauseId": "art-1-sec-1",
+      "quote": {
+        "exact": "All legislative Powers herein granted shall be vested in a Congress of the United States",
+        "prefix": "",
+        "suffix": ", which shall consist"
+      },
+      "concept": "Congress makes federal law; the executive does not legislate by unilateral decree."
+    },
+    {
+      "ref": "ART1-S4-C1-ELECTIONS",
+      "clauseId": "art-1-sec-4",
+      "quote": {
+        "exact": "The Times, Places and Manner of holding Elections for Senators and Representatives",
+        "prefix": "",
+        "suffix": ", shall be prescribed"
+      },
+      "concept": "Election administration for federal elections is assigned to states and Congress."
+    },
+    {
+      "ref": "ART1-S7-LAWMAKING",
+      "clauseId": "art-1-sec-7",
+      "quote": {
+        "exact": "Every Bill which shall have passed the House of Representatives and the Senate",
+        "prefix": "",
+        "suffix": ", shall, before it become a Law"
+      },
+      "concept": "Federal law is made through bicameralism and presentment."
+    },
+    {
+      "ref": "ART1-S8-C3-COMMERCE",
+      "clauseId": "art-1-sec-8-cl-3",
+      "quote": {
+        "exact": "to regulate Commerce with foreign Nations",
+        "prefix": "Power ",
+        "suffix": ", and among the several States"
+      },
+      "concept": "Congress, not the President alone, holds the power to regulate foreign commerce."
+    },
+    {
+      "ref": "ART1-S8-C4-NATURALIZATION",
+      "clauseId": "art-1-sec-8-cl-4",
+      "quote": {
+        "exact": "to establish an uniform Rule of Naturalization",
+        "prefix": "Power ",
+        "suffix": ", and uniform Laws"
+      },
+      "concept": "Congress controls the rules for naturalization and related citizenship status changes."
+    },
+    {
+      "ref": "ART1-S8-C15-MILITIA_CALL",
+      "clauseId": "art-1-sec-8-cl-15",
+      "quote": {
+        "exact": "to provide for calling forth the Militia",
+        "prefix": "Power ",
+        "suffix": " to execute the Laws"
+      },
+      "concept": "Constitutional framework for calling forth the militia belongs to Congress."
+    },
+    {
+      "ref": "ART1-S8-C16-MILITIA_ORG",
+      "clauseId": "art-1-sec-8-cl-16",
+      "quote": {
+        "exact": "to provide for organizing, arming, and disciplining, the Militia",
+        "prefix": "Power ",
+        "suffix": ", and for governing"
+      },
+      "concept": "Even when militia forces are federally used, states retain constitutionally reserved roles."
+    },
+    {
+      "ref": "ART1-S9-C2-HABEAS",
+      "clauseId": "art-1-sec-9",
+      "quote": {
+        "exact": "The Privilege of the Writ of Habeas Corpus shall not be suspended",
+        "prefix": "",
+        "suffix": ", unless when in Cases of Rebellion"
+      },
+      "concept": "The government may not cut off judicial review of detention except under narrow suspension conditions."
+    },
+    {
+      "ref": "ART1-S9-C7-APPROP",
+      "clauseId": "art-1-sec-9",
+      "quote": {
+        "exact": "No Money shall be drawn from the Treasury, but in Consequence of Appropriations made by Law",
+        "prefix": "exported from any State. ",
+        "suffix": "; and a regular Statement"
+      },
+      "concept": "Congress controls federal spending; the executive may not impound or redirect appropriated funds."
+    },
+    {
+      "ref": "ART1-S9-C7-ACCOUNT",
+      "clauseId": "art-1-sec-9",
+      "quote": {
+        "exact": "a regular Statement and Account of the Receipts and Expenditures of all public Money shall be published from time to time",
+        "prefix": "; and ",
+        "suffix": ". No Title of Nobility"
+      },
+      "concept": "The Constitution requires public accounting for public money."
+    },
+    {
+      "ref": "ART2-S1-C2-ELECTORS",
+      "clauseId": "art-2-sec-1",
+      "quote": {
+        "exact": "Each State shall appoint, in such Manner as the Legislature thereof may direct, a Number of Electors",
+        "prefix": "for the same Term. ",
+        "suffix": ", equal to the whole Number"
+      },
+      "concept": "Presidential electors are appointed by states under rules set by state legislatures."
+    },
+    {
+      "ref": "ART2-S2-C2-APPOINT",
+      "clauseId": "art-2-sec-2",
+      "quote": {
+        "exact": "he shall nominate, and by and with the Advice and Consent of the Senate, shall appoint",
+        "prefix": "concur; and ",
+        "suffix": " Ambassadors"
+      },
+      "concept": "Officials exercising significant federal authority must be appointed through the Constitution's appointments process."
+    },
+    {
+      "ref": "ART2-S3-TAKE_CARE",
+      "clauseId": "art-2-sec-3",
+      "quote": {
+        "exact": "take Care that the Laws be faithfully executed",
+        "prefix": "he shall ",
+        "suffix": ", and shall Commission"
+      },
+      "concept": "The President must execute enacted law faithfully, not suspend or rewrite it."
+    },
+    {
+      "ref": "AM1-ESTABLISHMENT",
+      "clauseId": "amend-1-cl-1",
+      "quote": {
+        "exact": "an establishment of religion",
+        "prefix": "respecting ",
+        "suffix": ", or prohibiting"
+      },
+      "concept": "Government action may not establish or favor a particular religion."
+    },
+    {
+      "ref": "AM1-FREE_EXERCISE",
+      "clauseId": "amend-1-cl-1",
+      "quote": {
+        "exact": "the free exercise thereof",
+        "prefix": "prohibiting ",
+        "suffix": ";"
+      },
+      "concept": "Government action may not target or substantially burden religious exercise."
+    },
+    {
+      "ref": "AM1-SPEECH",
+      "clauseId": "amend-1-cl-1",
+      "quote": {
+        "exact": "the freedom of speech",
+        "prefix": "abridging ",
+        "suffix": ","
+      },
+      "concept": "The government may not retaliate against protected expression or impose viewpoint-based burdens."
+    },
+    {
+      "ref": "AM1-PRESS",
+      "clauseId": "amend-1-cl-1",
+      "quote": {
+        "exact": "or of the press",
+        "prefix": "the freedom of speech, ",
+        "suffix": ";"
+      },
+      "concept": "Government may not punish or exclude the press based on viewpoint."
+    },
+    {
+      "ref": "AM1-ASSEMBLY_PETITION",
+      "clauseId": "amend-1-cl-1",
+      "quote": {
+        "exact": "peaceably to assemble",
+        "prefix": "people ",
+        "suffix": ","
+      },
+      "concept": "Government may not punish organizing, advocacy, or petitioning because of viewpoint."
+    },
+    {
+      "ref": "AM4-SEARCH",
+      "clauseId": "amend-4-cl-1",
+      "quote": {
+        "exact": "against unreasonable searches and seizures",
+        "prefix": "effects, ",
+        "suffix": ", shall not be violated"
+      },
+      "concept": "Arrests, detentions, searches, and data seizures must satisfy constitutional limits."
+    },
+    {
+      "ref": "AM5-DUE",
+      "clauseId": "amend-5-cl-1",
+      "quote": {
+        "exact": "without due process of law",
+        "prefix": "or property, ",
+        "suffix": ";"
+      },
+      "concept": "The federal government must provide lawful process before depriving people of liberty, status, or property."
+    },
+    {
+      "ref": "AM8-CRUEL",
+      "clauseId": "amend-8-cl-1",
+      "quote": {
+        "exact": "nor cruel and unusual punishments inflicted",
+        "prefix": "imposed, ",
+        "suffix": "."
+      },
+      "concept": "Punishment and carceral conditions may not cross constitutional limits of cruelty."
+    },
+    {
+      "ref": "AM10-RESERVED",
+      "clauseId": "amend-10-cl-1",
+      "quote": {
+        "exact": "are reserved to the States respectively, or to the people",
+        "prefix": "to the States, ",
+        "suffix": "."
+      },
+      "concept": "The federal government may not commandeer state governance outside delegated federal power."
+    },
+    {
+      "ref": "AM14-S1-CIT",
+      "clauseId": "amend-14-cl-1",
+      "quote": {
+        "exact": "All persons born or naturalized in the United States",
+        "prefix": "",
+        "suffix": ", and subject"
+      },
+      "concept": "Birthright citizenship is constitutionally fixed by the Citizenship Clause."
+    },
+    {
+      "ref": "AM15-VOTE",
+      "clauseId": "amend-15-cl-1",
+      "quote": {
+        "exact": "on account of race, color, or previous condition of servitude",
+        "prefix": "by any State ",
+        "suffix": "."
+      },
+      "concept": "Federal action may not impose race-based voting discrimination."
+    },
+    {
+      "ref": "AM19-VOTE",
+      "clauseId": "amend-19-cl-1",
+      "quote": {
+        "exact": "on account of sex",
+        "prefix": "by any State ",
+        "suffix": "."
+      },
+      "concept": "Federal action may not impose sex-based voting discrimination."
+    },
+    {
+      "ref": "AM24-VOTE_TAX",
+      "clauseId": "amend-24-cl-1",
+      "quote": {
+        "exact": "any poll tax or other tax",
+        "prefix": "failure to pay ",
+        "suffix": "."
+      },
+      "concept": "Federal election rules may not condition voting on payment."
+    },
+    {
+      "ref": "AM26-VOTE_18",
+      "clauseId": "amend-26-cl-1",
+      "quote": {
+        "exact": "on account of age",
+        "prefix": "by any State ",
+        "suffix": "."
+      },
+      "concept": "Federal election rules may not impose age-based voting burdens on adult citizens."
+    }
+  ],
+  "actions": [
+    {
+      "id": "birthright-citizenship-eo-14160",
+      "issueArea": "Immigration and Citizenship",
+      "actionGroup": "Birthright Citizenship (Executive Order 14160)",
+      "era": 2025,
+      "links": [
+        { "ref": "AM14-S1-CIT", "relation": "goes_against", "reasoning": "The action attempts to deny citizenship to children born in the United States by reinterpreting 'subject to the jurisdiction thereof' in a way that contradicts the Citizenship Clause's rule of birthright citizenship." },
+        { "ref": "ART1-S8-C4-NATURALIZATION", "relation": "ignores", "reasoning": "To the extent the order tries to rewrite who counts as a U.S. citizen by executive action, it intrudes on Congress's constitutional authority to establish uniform naturalization rules." },
+        { "ref": "ART2-S3-TAKE_CARE", "relation": "aims_to_contravene", "reasoning": "An executive order that attempts to nullify the constitutional rule of citizenship is not faithful execution of the law; it is an attempt to replace it." }
+      ]
+    },
+    {
+      "id": "tariffs-liberation-day-order",
+      "issueArea": "Trade Law",
+      "actionGroup": "Tariffs",
+      "era": 2025,
+      "links": [
+        { "ref": "ART1-S1-VEST", "relation": "goes_against", "reasoning": "Sweeping tariff schedules function as major national economic rules. Imposed without clear congressional authorization, they press against the Constitution's assignment of legislative power to Congress." },
+        { "ref": "ART1-S8-C3-COMMERCE", "relation": "ignores", "reasoning": "Foreign-commerce regulation is an Article I power. The constitutional objection is that the President is asserting direct control over trade policy the Constitution places chiefly with Congress." }
+      ]
+    },
+    {
+      "id": "temporary-pause-grants-loans-assistance",
+      "issueArea": "Government Grants, Loans, and Assistance",
+      "actionGroup": "\"Temporary Pause\" of Grants, Loans, and Assistance Programs",
+      "era": 2025,
+      "links": [
+        { "ref": "ART1-S9-C7-APPROP", "relation": "goes_against", "reasoning": "A blanket executive freeze on already-appropriated funding collides with Congress's power of the purse. The Constitution gives spending control to lawmaking, not to post-hoc presidential suspension." },
+        { "ref": "ART2-S3-TAKE_CARE", "relation": "ignores", "reasoning": "Once Congress has enacted funding law, the President's duty is faithful execution. Using executive memoranda to halt disbursement replaces execution with impoundment." }
+      ]
+    },
+    {
+      "id": "denial-of-federal-grants",
+      "issueArea": "Government Grants, Loans, and Assistance",
+      "actionGroup": "Denial of Federal Grants",
+      "era": 2025,
+      "links": [
+        { "ref": "ART1-S9-C7-APPROP", "relation": "goes_against", "reasoning": "When grant eligibility is narrowed or terminated by executive criteria that depart from enacted appropriations, the executive is effectively rewriting the terms on which Congress ordered public money to be spent." },
+        { "ref": "ART2-S3-TAKE_CARE", "relation": "ignores", "reasoning": "The action substitutes presidential preference for faithful execution of existing grant laws and appropriations." }
+      ]
+    },
+    {
+      "id": "doge-establishment",
+      "issueArea": "Structure of Government",
+      "actionGroup": "Establishment of \"Department of Government Efficiency\" (DOGE) (EO 14158, EO 14219)",
+      "era": 2025,
+      "links": [
+        { "ref": "ART2-S2-C2-APPOINT", "relation": "goes_against", "reasoning": "If DOGE leadership exercised significant federal authority without valid constitutional appointment, the action cuts directly against the Appointments Clause." },
+        { "ref": "ART2-S3-TAKE_CARE", "relation": "aims_to_contravene", "reasoning": "A structure that lets non-appointed actors direct executive functions weakens the Constitution's chain of accountability for faithful execution." }
+      ]
+    },
+    {
+      "id": "doge-disclosure-personal-financial-records",
+      "issueArea": "Structure of Government",
+      "actionGroup": "Disclosure of Personal and Financial Records to DOGE",
+      "era": 2025,
+      "links": [
+        { "ref": "AM4-SEARCH", "relation": "goes_against", "reasoning": "Opening highly sensitive records to actors lacking a clear lawful basis raises a direct search-and-seizure problem because it treats protected personal data as available for unilateral executive access." },
+        { "ref": "AM5-DUE", "relation": "ignores", "reasoning": "People have a due-process interest in not having liberty and privacy-related interests handled by unauthorized processes. Secretive access to records by irregular actors undermines lawful process." },
+        { "ref": "ART2-S2-C2-APPOINT", "relation": "goes_against", "reasoning": "If the actors exercising this access were not constitutionally appointed officers, the constitutional defect is not just privacy-related but structural." }
+      ]
+    },
+    {
+      "id": "anti-weaponization-fund",
+      "issueArea": "Structure of Government",
+      "actionGroup": "Anti-Weaponization Fund",
+      "era": 2025,
+      "links": [
+        { "ref": "ART1-S9-C7-APPROP", "relation": "goes_against", "reasoning": "A large executive compensation fund for favored claimants is constitutionally suspicious when it operates as a new spending program without clear congressional appropriation architecture." },
+        { "ref": "ART2-S3-TAKE_CARE", "relation": "aims_to_contravene", "reasoning": "Using settlement power to create a quasi-programmatic slush fund risks turning execution of law into personalized patronage." }
+      ]
+    },
+    {
+      "id": "law-firms-lawyers-orders",
+      "issueArea": "Civil Liberties and Rights",
+      "actionGroup": "Action Against Law Firms and Lawyers (EO 14230 — Perkins Coie; EO 14246 — Jenner & Block; EO — WilmerHale)",
+      "era": 2025,
+      "links": [
+        { "ref": "AM1-SPEECH", "relation": "goes_against", "reasoning": "Targeting firms because of disfavored advocacy or association is viewpoint retaliation. The First Amendment forbids the government from penalizing speech by attaching official burdens to it." },
+        { "ref": "AM1-ASSEMBLY_PETITION", "relation": "goes_against", "reasoning": "Law practice, client representation, bar advocacy, and litigation are classic forms of petitioning and associational activity. Punishing firms for those activities attacks that constitutional protection." },
+        { "ref": "AM5-DUE", "relation": "ignores", "reasoning": "Security-clearance, contracting, and sanctions-style penalties imposed through politically targeted directives raise due-process concerns: they deprive firms and lawyers of important legal interests through irregular process." }
+      ]
+    },
+    {
+      "id": "universities-demands-and-funding-pressure",
+      "issueArea": "Civil Liberties and Rights",
+      "actionGroup": "Actions Toward Universities (EO 14188, grant pauses/terminations, Columbia & Harvard letters of demands, Harvard student-visa proclamation)",
+      "era": 2025,
+      "links": [
+        { "ref": "AM1-SPEECH", "relation": "goes_against", "reasoning": "Federal attempts to coerce institutional speech, curriculum, or viewpoint-based disciplinary choices burden the First Amendment values that protect universities and their communities from orthodoxy by executive decree." },
+        { "ref": "ART1-S9-C7-APPROP", "relation": "ignores", "reasoning": "When grant termination is used as an ad hoc coercive tool untethered from enacted funding conditions, the executive is functionally rewriting appropriations." },
+        { "ref": "ART2-S3-TAKE_CARE", "relation": "aims_to_contravene", "reasoning": "The President may enforce existing law, but not invent new funding conditions or visa penalties to impose ideological compliance." }
+      ]
+    },
+    {
+      "id": "retaliation-protected-speech",
+      "issueArea": "Civil Liberties and Rights",
+      "actionGroup": "Retaliation Against Protected Speech",
+      "era": 2025,
+      "links": [
+        { "ref": "AM1-SPEECH", "relation": "goes_against", "reasoning": "Retaliation is one of the clearest ways government abridges speech, because it punishes expression instead of openly censoring it." }
+      ]
+    },
+    {
+      "id": "restricting-press-freedom",
+      "issueArea": "Civil Liberties and Rights",
+      "actionGroup": "Restricting Press Freedom",
+      "era": 2025,
+      "links": [
+        { "ref": "AM1-PRESS", "relation": "goes_against", "reasoning": "Excluding or penalizing a news organization because of its editorial language or viewpoint directly burdens the constitutional protection for a free press." },
+        { "ref": "AM1-SPEECH", "relation": "goes_against", "reasoning": "The press clause is not severed from the broader speech principle; viewpoint-based punishment of newsroom choices is also a speech violation." }
+      ]
+    },
+    {
+      "id": "election-law-eo",
+      "issueArea": "Civil Liberties and Rights",
+      "actionGroup": "Election Law Executive Order",
+      "era": 2025,
+      "links": [
+        { "ref": "ART1-S4-C1-ELECTIONS", "relation": "ignores", "reasoning": "The Constitution assigns election-rule making to states and Congress. A presidential order purporting to dictate proof-of-citizenship and funding conditions for election administration presses against that allocation." },
+        { "ref": "AM15-VOTE", "relation": "risks_contravention", "reasoning": "Where new federal conditions predictably burden racial minorities' access to voting, they implicate the Fifteenth Amendment's anti-discrimination rule." },
+        { "ref": "AM19-VOTE", "relation": "risks_contravention", "reasoning": "Because federal voting burdens cannot discriminate on account of sex, sex-skewed burdens raise a Nineteenth Amendment issue." },
+        { "ref": "AM24-VOTE_TAX", "relation": "risks_contravention", "reasoning": "If compliance costs or document fees operate as a condition on voting in federal elections, the poll-tax principle is implicated." },
+        { "ref": "AM26-VOTE_18", "relation": "risks_contravention", "reasoning": "Federal election rules also cannot impose age-based abridgment on citizens eighteen and older." }
+      ]
+    },
+    {
+      "id": "sanctuary-jurisdictions-punishment",
+      "issueArea": "Immigration and Citizenship",
+      "actionGroup": "Punishment of Sanctuary Cities and States (EO 14159; DOJ Sanctuary Jurisdiction Directives, Feb. 5, 2025)",
+      "era": 2025,
+      "links": [
+        { "ref": "AM10-RESERVED", "relation": "goes_against", "reasoning": "The anti-commandeering principle protects states and localities from being turned into instruments of federal policy implementation. Punishing them for declining to administer federal immigration priorities presses directly on that constitutional line." },
+        { "ref": "ART1-S9-C7-APPROP", "relation": "ignores", "reasoning": "Funding threats untethered from Congress's conditions are an attempt to use executive control over disbursement to coerce state governance choices." }
+      ]
+    },
+    {
+      "id": "federalization-national-guard-domestic-military",
+      "issueArea": "Federalism",
+      "actionGroup": "Federalization of National Guard / Domestic Use of Military",
+      "era": 2025,
+      "links": [
+        { "ref": "ART1-S8-C15-MILITIA_CALL", "relation": "ignores", "reasoning": "The Constitution places the legal framework for calling forth militia forces in Congress. Domestic deployment without the constitutionally grounded triggering conditions strains that framework." },
+        { "ref": "ART1-S8-C16-MILITIA_ORG", "relation": "goes_against", "reasoning": "Even when militia forces are used in federal service, states retain constitutionally protected roles. Heavy-handed federalization directed at overriding a state's own governance decisions attacks that allocation." },
+        { "ref": "AM10-RESERVED", "relation": "aims_to_contravene", "reasoning": "Using domestic military power to displace ordinary state authority raises the Tenth Amendment concern that the federal government is invading a reserved sphere of state control." }
+      ]
+    },
+    {
+      "id": "alien-enemies-act-removals",
+      "issueArea": "Immigration and Citizenship",
+      "actionGroup": "Alien Enemies Act Removals (Presidential Proclamation 10903)",
+      "era": 2025,
+      "links": [
+        { "ref": "ART1-S9-C2-HABEAS", "relation": "goes_against", "reasoning": "Mass removals under emergency logic, when structured to evade meaningful judicial review, collide with the Constitution's protection of habeas absent rebellion or invasion." },
+        { "ref": "AM5-DUE", "relation": "goes_against", "reasoning": "Removing people through compressed or opaque procedures without individualized process deprives liberty without the process the Fifth Amendment requires." }
+      ]
+    },
+    {
+      "id": "expedited-removal-expansion",
+      "issueArea": "Immigration and Citizenship",
+      "actionGroup": "Expedited Removal Expansion (EO 14159)",
+      "era": 2025,
+      "links": [
+        { "ref": "AM5-DUE", "relation": "goes_against", "reasoning": "Expanding rapid removal deep into the interior without hearing protections directly threatens procedural due process because people can be expelled before a meaningful opportunity to contest the government's case." }
+      ]
+    },
+    {
+      "id": "immigration-raids-and-arrests",
+      "issueArea": "Immigration and Citizenship",
+      "actionGroup": "Immigration Raids and Arrests",
+      "era": 2025,
+      "links": [
+        { "ref": "AM4-SEARCH", "relation": "goes_against", "reasoning": "Warrantless or intimidation-based raids, especially when paired with indiscriminate stops and arrests, are a direct unreasonable-search-and-seizure problem." },
+        { "ref": "AM5-DUE", "relation": "ignores", "reasoning": "When arrests and detention tactics are used without notice, fair procedure, or lawful review, the deprivation of liberty is constitutionally defective." }
+      ]
+    },
+    {
+      "id": "agency-data-sharing-for-immigration-enforcement",
+      "issueArea": "Immigration and Citizenship",
+      "actionGroup": "Agency Data Sharing for Immigration Enforcement (EO 14165, EO 14159, EO 14158)",
+      "era": 2025,
+      "links": [
+        { "ref": "AM4-SEARCH", "relation": "goes_against", "reasoning": "Using tax or agency records for new immigration-enforcement purposes can amount to an unreasonable seizure or search of protected personal information when done without adequate legal authorization." },
+        { "ref": "AM5-DUE", "relation": "ignores", "reasoning": "Repurposing sensitive data in ways people had no fair notice of raises due-process concerns because liberty-affecting executive action is being built on opaque, irregular procedures." }
+      ]
+    },
+    {
+      "id": "migrant-transfers-guantanamo",
+      "issueArea": "Immigration and Citizenship",
+      "actionGroup": "Migrant Transfers to Guantánamo (Presidential Memorandum)",
+      "era": 2025,
+      "links": [
+        { "ref": "ART1-S9-C2-HABEAS", "relation": "goes_against", "reasoning": "Moving migrants to Guantánamo is constitutionally troubling when the practical function is to complicate or obstruct court access and habeas review." },
+        { "ref": "AM5-DUE", "relation": "goes_against", "reasoning": "Offshore transfer to detention without meaningful process threatens liberty through geographic displacement designed to weaken ordinary procedural protections." }
+      ]
+    },
+    {
+      "id": "conditions-of-imprisonment-death-penalty-order",
+      "issueArea": "Civil Liberties and Rights",
+      "actionGroup": "Conditions of Imprisonment / Death Penalty (EO 14164; AG Memorandum, Feb. 5, 2025)",
+      "era": 2025,
+      "links": [
+        { "ref": "AM8-CRUEL", "relation": "goes_against", "reasoning": "Where the executive order and follow-on carceral practices expose prisoners to punishment conditions that exceed constitutional limits, the Eighth Amendment is the directly implicated text." }
+      ]
+    },
+    {
+      "id": "anti-lgbtq-government-employees",
+      "issueArea": "Civil Liberties and Rights",
+      "actionGroup": "Actions Against LGBTQ+ Government Employees",
+      "era": 2025,
+      "links": [
+        { "ref": "AM5-DUE", "relation": "goes_against", "reasoning": "Because this is federal action, the Fifth Amendment is the relevant textual hook. Targeting employees for adverse treatment because of LGBTQ+ status presses directly on federal due-process / equality limits." }
+      ]
+    },
+    {
+      "id": "passport-policy-targeting-trans-people",
+      "issueArea": "Civil Liberties and Rights",
+      "actionGroup": "Passport Policy Targeting Transgender Individuals (EO 14168)",
+      "era": 2025,
+      "links": [
+        { "ref": "AM5-DUE", "relation": "goes_against", "reasoning": "Passports are core legal identity documents. Forcing inaccurate sex designations or denying ordinary document treatment because a person is transgender deprives liberty and status interests through arbitrary federal process." }
+      ]
+    },
+    {
+      "id": "ban-trans-military-service",
+      "issueArea": "Civil Liberties and Rights",
+      "actionGroup": "Ban on Transgender Military Service (EO 14183)",
+      "era": 2025,
+      "links": [
+        { "ref": "AM5-DUE", "relation": "goes_against", "reasoning": "A categorical federal exclusion based on transgender status is most directly linked to the Fifth Amendment's due-process constraint on arbitrary federal deprivation of status and opportunity." }
+      ]
+    },
+    {
+      "id": "housing-trans-inmates",
+      "issueArea": "Civil Liberties and Rights",
+      "actionGroup": "Housing of Transgender Incarcerated Individuals (EO 14168)",
+      "era": 2025,
+      "links": [
+        { "ref": "AM8-CRUEL", "relation": "goes_against", "reasoning": "Housing assignments that knowingly expose incarcerated people to serious harm or humiliating conditions raise a direct Eighth Amendment problem." },
+        { "ref": "AM5-DUE", "relation": "ignores", "reasoning": "To the extent the policy uses categorical identity rules rather than individualized process, it also implicates the Fifth Amendment." }
+      ]
+    },
+    {
+      "id": "immigration-enforcement-places-of-worship",
+      "issueArea": "Civil Liberties and Rights",
+      "actionGroup": "Immigration Enforcement Against Places of Worship and Schools",
+      "era": 2025,
+      "links": [
+        { "ref": "AM1-FREE_EXERCISE", "relation": "goes_against", "reasoning": "Singling out or knowingly burdening worship settings with enforcement activity chills religious exercise at the site where the Constitution is supposed to protect it." }
+      ]
+    },
+    {
+      "id": "construction-on-public-lands-oak-flat",
+      "issueArea": "Environment",
+      "actionGroup": "Construction on Public Lands (Oak Flat)",
+      "era": 2025,
+      "links": [
+        { "ref": "AM1-FREE_EXERCISE", "relation": "goes_against", "reasoning": "Where federally approved construction destroys or transfers land central to ongoing Apache religious exercise, the constitutional objection is not merely environmental; it is also a direct free-exercise problem." }
+      ]
+    },
+    {
+      "id": "response-to-foia-and-records-retention",
+      "issueArea": "Transparency",
+      "actionGroup": "Response to FOIA and Records Retention",
+      "era": 2025,
+      "links": [
+        { "ref": "ART2-S3-TAKE_CARE", "relation": "ignores", "reasoning": "The Constitution does not itself create FOIA, but once Congress enacts records and disclosure obligations, the executive's duty is faithful execution rather than systematic evasion." },
+        { "ref": "ART1-S9-C7-APPROP", "relation": "risks_contravention", "reasoning": "Where records suppression concerns receipts, expenditures, or apportionment, the constitutional transparency principle in the Statement and Account language becomes directly relevant." }
+      ]
+    },
+    {
+      "id": "remove-apportionment-information-omb",
+      "issueArea": "Transparency",
+      "actionGroup": "Removal of Apportionment Information From OMB Website",
+      "era": 2025,
+      "links": [
+        { "ref": "ART1-S9-C7-ACCOUNT", "relation": "goes_against", "reasoning": "The Constitution expressly requires a regular public account of receipts and expenditures. Pulling down apportionment and spending-accountability materials attacks the constitutional value of public fiscal transparency." },
+        { "ref": "ART2-S3-TAKE_CARE", "relation": "ignores", "reasoning": "If Congress has required disclosure machinery around apportionment, executive removal of that machinery is not faithful execution." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+[
+  { "id": "span-preamble-we", "clauseId": "preamble-cl-1", "selector": [
+    { "type": "TextQuoteSelector", "exact": "We the People", "prefix": "", "suffix": " of the United States" },
+    { "type": "TextPositionSelector", "start": 0, "end": 13 }
+  ], "annotationIds": ["a-preamble-we-1","a-preamble-we-2","a-preamble-we-3"] },
+  { "id": "span-preamble-union", "clauseId": "preamble-cl-1", "selector": [
+    { "type": "TextQuoteSelector", "exact": "a more perfect Union", "prefix": "in Order to form ", "suffix": "," },
+    { "type": "TextPositionSelector", "start": 53, "end": 73 }
+  ], "annotationIds": ["a-preamble-union-1","a-preamble-union-2","a-preamble-union-3"] },
+  { "id": "span-preamble-liberty", "clauseId": "preamble-cl-1", "selector": [
+    { "type": "TextQuoteSelector", "exact": "Blessings of Liberty", "prefix": "secure the ", "suffix": " to ourselves" },
+    { "type": "TextPositionSelector", "start": 199, "end": 219 }
+  ], "annotationIds": ["a-preamble-liberty-1","a-preamble-liberty-2","a-preamble-liberty-3"] },
+
+  { "id": "span-commerce-regulate", "clauseId": "art-1-sec-8-cl-3", "selector": [
+    { "type": "TextQuoteSelector", "exact": "to regulate Commerce", "prefix": "Power ", "suffix": " with foreign Nations" },
+    { "type": "TextPositionSelector", "start": 30, "end": 50 }
+  ], "annotationIds": ["a-commerce-1","a-commerce-2","a-commerce-3","a-commerce-4"] },
+  { "id": "span-commerce-among", "clauseId": "art-1-sec-8-cl-3", "selector": [
+    { "type": "TextQuoteSelector", "exact": "among the several States", "prefix": "and ", "suffix": ", and with the Indian Tribes" },
+    { "type": "TextPositionSelector", "start": 77, "end": 101 }
+  ], "annotationIds": ["a-commerce-5","a-commerce-6","a-commerce-7"] },
+
+  { "id": "span-np-necessary", "clauseId": "art-1-sec-8-cl-18", "selector": [
+    { "type": "TextQuoteSelector", "exact": "necessary and proper", "prefix": "which shall be ", "suffix": " for carrying" },
+    { "type": "TextPositionSelector", "start": 62, "end": 82 }
+  ], "annotationIds": ["a-np-1","a-np-2","a-np-3","a-np-4"] },
+  { "id": "span-np-foregoing", "clauseId": "art-1-sec-8-cl-18", "selector": [
+    { "type": "TextQuoteSelector", "exact": "carrying into Execution the foregoing Powers", "prefix": "proper for ", "suffix": "," },
+    { "type": "TextPositionSelector", "start": 87, "end": 131 }
+  ], "annotationIds": ["a-np-5","a-np-6","a-np-7"] },
+
+  { "id": "span-1a-establishment", "clauseId": "amend-1-cl-1", "selector": [
+    { "type": "TextQuoteSelector", "exact": "an establishment of religion", "prefix": "respecting ", "suffix": ", or prohibiting" },
+    { "type": "TextPositionSelector", "start": 38, "end": 66 }
+  ], "annotationIds": ["a-1a-est-1","a-1a-est-2","a-1a-est-3"] },
+  { "id": "span-1a-free-exercise", "clauseId": "amend-1-cl-1", "selector": [
+    { "type": "TextQuoteSelector", "exact": "the free exercise thereof", "prefix": "prohibiting ", "suffix": ";" },
+    { "type": "TextPositionSelector", "start": 83, "end": 108 }
+  ], "annotationIds": ["a-1a-free-1","a-1a-free-2","a-1a-free-3"] },
+  { "id": "span-1a-speech", "clauseId": "amend-1-cl-1", "selector": [
+    { "type": "TextQuoteSelector", "exact": "the freedom of speech", "prefix": "abridging ", "suffix": "," },
+    { "type": "TextPositionSelector", "start": 123, "end": 144 }
+  ], "annotationIds": ["a-1a-speech-1","a-1a-speech-2","a-1a-speech-3","a-1a-speech-4"] },
+  { "id": "span-1a-assembly", "clauseId": "amend-1-cl-1", "selector": [
+    { "type": "TextQuoteSelector", "exact": "peaceably to assemble", "prefix": "people ", "suffix": "," },
+    { "type": "TextPositionSelector", "start": 191, "end": 212 }
+  ], "annotationIds": ["a-1a-assembly-1","a-1a-assembly-2"] },
+
+  { "id": "span-2a-militia", "clauseId": "amend-2-cl-1", "selector": [
+    { "type": "TextQuoteSelector", "exact": "A well regulated Militia", "prefix": "", "suffix": ", being necessary" },
+    { "type": "TextPositionSelector", "start": 0, "end": 24 }
+  ], "annotationIds": ["a-2a-militia-1","a-2a-militia-2","a-2a-militia-3"] },
+  { "id": "span-2a-keep-bear", "clauseId": "amend-2-cl-1", "selector": [
+    { "type": "TextQuoteSelector", "exact": "to keep and bear Arms", "prefix": "the people ", "suffix": ", shall not be infringed" },
+    { "type": "TextPositionSelector", "start": 99, "end": 120 }
+  ], "annotationIds": ["a-2a-bear-1","a-2a-bear-2","a-2a-bear-3","a-2a-bear-4","a-2a-bear-5"] },
+
+  { "id": "span-14-citizenship", "clauseId": "amend-14-cl-1", "selector": [
+    { "type": "TextQuoteSelector", "exact": "All persons born or naturalized in the United States", "prefix": "", "suffix": "," },
+    { "type": "TextPositionSelector", "start": 0, "end": 52 }
+  ], "annotationIds": ["a-14-cit-1","a-14-cit-2","a-14-cit-3"] },
+  { "id": "span-14-privileges", "clauseId": "amend-14-cl-1", "selector": [
+    { "type": "TextQuoteSelector", "exact": "privileges or immunities of citizens of the United States", "prefix": "abridge the ", "suffix": ";" },
+    { "type": "TextPositionSelector", "start": 230, "end": 287 }
+  ], "annotationIds": ["a-14-pi-1","a-14-pi-2","a-14-pi-3"] },
+  { "id": "span-14-due-process", "clauseId": "amend-14-cl-1", "selector": [
+    { "type": "TextQuoteSelector", "exact": "without due process of law", "prefix": "or property, ", "suffix": ";" },
+    { "type": "TextPositionSelector", "start": 360, "end": 386 }
+  ], "annotationIds": ["a-14-dp-1","a-14-dp-2","a-14-dp-3"] },
+  { "id": "span-14-equal-protection", "clauseId": "amend-14-cl-1", "selector": [
+    { "type": "TextQuoteSelector", "exact": "the equal protection of the laws", "prefix": "jurisdiction ", "suffix": "." },
+    { "type": "TextPositionSelector", "start": 430, "end": 462 }
+  ], "annotationIds": ["a-14-ep-1","a-14-ep-2","a-14-ep-3"] }
+]

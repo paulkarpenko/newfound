@@ -1,0 +1,87 @@
+@import './theme.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--nf-plane);
+  color: var(--nf-ink);
+  font-family: 'Source Serif 4', Spectral, Georgia, serif;
+  overflow: hidden; /* the plane manages its own viewport */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(214, 168, 87, 0.32);
+  color: var(--nf-ink);
+}
+
+button {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--nf-focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.font-smallcaps {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+  font-size: 10px;
+  color: var(--nf-ink-soft);
+}
+
+/* Pan surface — the plane cursor when idle vs grabbing */
+.plane-surface {
+  cursor: grab;
+}
+.plane-surface.is-panning {
+  cursor: grabbing;
+}
+
+/* Outline clause row hover */
+.nf-outline-row:hover {
+  background: var(--nf-panel-deep);
+  cursor: pointer;
+}
+.nf-outline-row:focus-visible {
+  background: var(--nf-panel-deep);
+}
+
+/* Reduced motion — all fly-to, crossfades, and panel transitions become instant */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

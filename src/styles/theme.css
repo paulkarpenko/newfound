@@ -1,0 +1,85 @@
+/*
+ * Newfound v3 — the maps-style plane.
+ *
+ * Tokens:
+ *   nf-plane    — the plane background (the territory)
+ *   nf-canvas   — the reading column background (slightly lifted from the plane)
+ *   nf-panel    — floating panel background
+ *   nf-ink…     — text
+ *   nf-rule     — hairlines, never borders
+ *
+ * Annotation-density ramp (used IDENTICALLY at every tier and in the minimap):
+ *   nf-density-0 (untouched) → nf-density-5 (heavily annotated).
+ *   Hue chosen as a warm sequential ramp (light → saturated amber).
+ *
+ * Annotation-type accents — small, used on leader lines & panel pips only.
+ */
+
+:root,
+[data-theme='light'] {
+  --nf-plane: #ece7d8;
+  --nf-canvas: #f6f2e8;
+  --nf-panel: #ffffff;
+  --nf-panel-deep: #f0ebde;
+
+  --nf-ink: #211e18;
+  --nf-ink-soft: #5a5246;
+  --nf-ink-whisper: rgba(33, 30, 24, 0.5);
+
+  --nf-rule: rgba(33, 30, 24, 0.12);
+  --nf-rule-soft: rgba(33, 30, 24, 0.06);
+
+  /* Sequential ramp — annotation density. Used everywhere density is expressed. */
+  --nf-density-0: rgba(33, 30, 24, 0.05);
+  --nf-density-1: #efe2c5;
+  --nf-density-2: #e3c98c;
+  --nf-density-3: #d6a857;
+  --nf-density-4: #c4823a;
+  --nf-density-5: #a25a25;
+
+  /* Type accents — small, on panel pips and leader lines */
+  --nf-type-interpretation: #5c6b86;
+  --nf-type-evidence: #6e7e6a;
+  --nf-type-counterpoint: #c4663b;
+  --nf-type-crossref: #4f756f;
+  --nf-type-context: #8a6e4e;
+  --nf-type-media: #876274;
+  --nf-type-question: #7c5c46;
+  /* Tracker = a contemporary legal challenge to the text. Warmer / louder
+     than interpretive types so it reads as live, current, urgent. */
+  --nf-type-tracker: #a25a25;
+
+  --nf-focus: #2f5d97;
+}
+
+[data-theme='dark'] {
+  --nf-plane: #14130e;
+  --nf-canvas: #1c1a13;
+  --nf-panel: #232017;
+  --nf-panel-deep: #2c2819;
+
+  --nf-ink: #e8e0cf;
+  --nf-ink-soft: #9b927f;
+  --nf-ink-whisper: rgba(232, 224, 207, 0.55);
+
+  --nf-rule: rgba(232, 224, 207, 0.14);
+  --nf-rule-soft: rgba(232, 224, 207, 0.06);
+
+  --nf-density-0: rgba(232, 224, 207, 0.07);
+  --nf-density-1: #3a3520;
+  --nf-density-2: #6b552d;
+  --nf-density-3: #97743a;
+  --nf-density-4: #c89148;
+  --nf-density-5: #f1b860;
+
+  --nf-type-interpretation: #82929d;
+  --nf-type-evidence: #8a9a86;
+  --nf-type-counterpoint: #e08654;
+  --nf-type-crossref: #72a09a;
+  --nf-type-context: #b29170;
+  --nf-type-media: #b08698;
+  --nf-type-question: #a07a5e;
+  --nf-type-tracker: #d68d54;
+
+  --nf-focus: #6a9fde;
+}
