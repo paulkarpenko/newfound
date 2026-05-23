@@ -87,6 +87,16 @@ export default function QuestionSidebar() {
             content: `[Context] Reader selected ${phrase} ${cite}.${body}`.trim(),
           };
         }
+        if (t.role === 'note') {
+          // Reader's own take — sent as background so Claude knows what
+          // the reader thinks, but not treated as a direct question.
+          const cite = t.citation ? `from ${t.citation}` : '';
+          const phrase = t.exact ? `on "${t.exact}"` : '';
+          return {
+            role: 'user' as const,
+            content: `[Reader's note ${phrase} ${cite}] ${t.content}`.trim(),
+          };
+        }
         return { role: t.role as 'user' | 'assistant', content: t.content };
       });
     const history: ChatMessage[] = [];
@@ -288,7 +298,7 @@ export default function QuestionSidebar() {
             style={{
               fontFamily: 'Source Serif 4, serif',
               fontStyle: 'italic',
-              fontSize: 13,
+              fontSize: 15,
               color: 'var(--nf-ink-whisper)',
               margin: 0,
               lineHeight: 1.6,
@@ -338,10 +348,10 @@ export default function QuestionSidebar() {
             color: 'var(--nf-ink)',
             border: '1px solid var(--nf-rule)',
             borderRadius: 3,
-            padding: '8px 10px',
+            padding: '10px 12px',
             fontFamily: 'Source Serif 4, serif',
-            fontSize: 13,
-            lineHeight: 1.5,
+            fontSize: 15,
+            lineHeight: 1.55,
             resize: 'none',
             outline: 'none',
           }}
@@ -412,13 +422,13 @@ function TurnBubble({ turn }: { turn: SidebarTurn }) {
             style={{
               fontFamily: 'Source Serif 4, serif',
               fontStyle: 'italic',
-              fontSize: 12,
+              fontSize: 14,
               color: 'var(--nf-ink-soft)',
               margin: '4px 0 0',
               lineHeight: 1.5,
             }}
           >
-            "{turn.exact.length > 160 ? turn.exact.slice(0, 160) + '…' : turn.exact}"
+            "{turn.exact.length > 200 ? turn.exact.slice(0, 200) + '…' : turn.exact}"
           </p>
         )}
       </div>
@@ -426,21 +436,63 @@ function TurnBubble({ turn }: { turn: SidebarTurn }) {
   }
   if (turn.role === 'user') {
     return (
-      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 12 }}>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 14 }}>
         <div
           style={{
             maxWidth: '88%',
             background: 'var(--nf-focus)',
             color: '#fff',
-            borderRadius: '10px 10px 2px 10px',
-            padding: '8px 12px',
+            borderRadius: '12px 12px 2px 12px',
+            padding: '10px 14px',
             fontFamily: 'Source Serif 4, serif',
-            fontSize: 13.5,
-            lineHeight: 1.5,
+            fontSize: 16,
+            lineHeight: 1.55,
             whiteSpace: 'pre-wrap',
           }}
         >
           {turn.content}
+        </div>
+      </div>
+    );
+  }
+  if (turn.role === 'note') {
+    return (
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 14 }}>
+        <div
+          style={{
+            maxWidth: '88%',
+            background: 'var(--nf-canvas)',
+            color: 'var(--nf-ink)',
+            border: '1px dashed var(--nf-focus)',
+            borderRadius: '12px 12px 2px 12px',
+            padding: '8px 14px 10px',
+            position: 'relative',
+          }}
+        >
+          <p
+            style={{
+              fontFamily: 'Inter, ui-sans-serif, system-ui, sans-serif',
+              textTransform: 'uppercase',
+              letterSpacing: '0.14em',
+              fontSize: 9,
+              fontWeight: 600,
+              color: 'var(--nf-focus)',
+              margin: '0 0 4px',
+            }}
+          >
+            your take · saved
+          </p>
+          <p
+            style={{
+              fontFamily: 'Source Serif 4, serif',
+              fontSize: 16,
+              lineHeight: 1.55,
+              margin: 0,
+              whiteSpace: 'pre-wrap',
+            }}
+          >
+            {turn.content}
+          </p>
         </div>
       </div>
     );
@@ -464,7 +516,7 @@ function TurnBubble({ turn }: { turn: SidebarTurn }) {
         <p
           style={{
             fontFamily: 'Source Serif 4, serif',
-            fontSize: 13.5,
+            fontSize: 16,
             lineHeight: 1.6,
             color: '#a23',
             fontStyle: 'italic',
@@ -480,7 +532,8 @@ function TurnBubble({ turn }: { turn: SidebarTurn }) {
             text={turn.content}
             baseStyle={{
               fontFamily: 'Source Serif 4, serif',
-              fontSize: 13.5,
+              fontSize: 16,
+              lineHeight: 1.6,
               color: 'var(--nf-ink)',
             }}
           />

@@ -13,7 +13,7 @@ import CorpusText from '@/components/tier2/CorpusText';
 import PanelLayer from '@/components/panels/PanelLayer';
 import Composer from '@/components/composer/Composer';
 import AnnotatePill from '@/components/composer/AnnotatePill';
-import ExplanationPanel from '@/components/explanation/ExplanationPanel';
+import ExplanationLayer from '@/components/explanation/ExplanationLayer';
 import ClauseChatPanel from '@/components/explanation/ClauseChatPanel';
 import QuestionSidebar from '@/components/explanation/QuestionSidebar';
 import AnnotationDetailModal from '@/components/detail/AnnotationDetailModal';
@@ -115,9 +115,10 @@ export default function Reader() {
         {/* Panels & leader lines render at every tier (collapsed to dots in T1). */}
         <PanelLayer />
 
-        {/* Transient explanation popover lives in world space so it follows
-            pan/zoom and connects to its text anchor with a leader line. */}
-        <ExplanationPanel />
+        {/* Open explanation panels (one per selection the reader has asked
+            about). The layer packs them into lanes adjacent to each clause,
+            same spatial rules as annotation panels. */}
+        <ExplanationLayer />
 
         {/* "Why this exists" chat panel — tethered to a clause title by a
             leader line, draggable, lives in world space alongside the text. */}

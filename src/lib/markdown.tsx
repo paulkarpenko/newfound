@@ -79,7 +79,7 @@ function renderBlock(b: Block, i: number, total: number): ReactNode {
   const marginBottom = last ? 0 : 10;
   switch (b.kind) {
     case 'heading': {
-      const sizes = { 1: 16, 2: 14, 3: 13 } as const;
+      const sizes = { 1: 20, 2: 17, 3: 14 } as const;
       return (
         <p
           key={i}
@@ -90,7 +90,8 @@ function renderBlock(b: Block, i: number, total: number): ReactNode {
             color: 'var(--nf-focus)',
             textTransform: b.level === 3 ? 'uppercase' : 'none',
             letterSpacing: b.level === 3 ? '0.1em' : 'normal',
-            margin: i === 0 ? '0 0 6px' : '12px 0 6px',
+            margin: i === 0 ? '0 0 8px' : '16px 0 8px',
+            lineHeight: 1.25,
           }}
         >
           {renderInline(b.text)}

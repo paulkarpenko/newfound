@@ -67,8 +67,10 @@ interface NewfoundState {
   /** Whether the composer dialog is actually open (after the pill is clicked). */
   composerOpen: boolean;
 
-  /** Active explanation popover (a transient panel — not persisted as an annotation). */
-  explanation: ExplanationState | null;
+  /** Open explanation panels, keyed by id. Each panel is a transient
+   *  selection-explainer (not persisted as an annotation). Multiple may
+   *  be open at once — they stack in lanes adjacent to their clauses. */
+  explanations: Map<string, ExplanationState>;
 
   /** Active clause chat — full-clause "explain this section" chat panel. */
   clauseChat: ClauseChatState | null;
@@ -112,7 +114,12 @@ interface NewfoundState {
   setFacetEra(min: number | null, max: number | null): void;
   clearFacets(): void;
 
-  addSpanAndAnnotation(span: Span, annotation: Annotation, side: 'left' | 'right'): void;
+  addSpanAndAnnotation(
+    span: Span,
+    annotation: Annotation,
+    side: 'left' | 'right',
+    options?: { openPanel?: boolean },
+  ): void;
   addAnnotationToSpan(spanId: string, annotation: Annotation): void;
   removeAnnotation(annotationId: string): void;
 
@@ -125,8 +132,9 @@ interface NewfoundState {
   closeDetail(): void;
 
   openExplanation(state: ExplanationState): void;
-  closeExplanation(): void;
-  pinExplanation(at: { x: number; y: number } | null): void;
+  closeExplanation(id: string): void;
+  closeAllExplanations(): void;
+  pinExplanation(id: string, at: { x: number; y: number } | null): void;
 
   openClauseChat(clauseId: string): void;
   closeClauseChat(): void;
@@ -152,8 +160,15 @@ interface NewfoundState {
  * as an annotation; cleared via closeExplanation().
  */
 export interface ExplanationState {
+  /** Stable identifier (derived from clauseId + selected phrase) so re-selecting
+   *  the same phrase reuses the existing panel rather than opening a duplicate. */
+  id: string;
   clauseId: string;
   exact: string;
+  /** Anchor context — used to persist a TextQuoteSelector if the reader
+   *  decides to save this selection as an annotation note. */
+  prefix?: string;
+  suffix?: string;
   /** world-space anchor (where the selection sits) */
   worldX: number;
   worldY: number;
@@ -183,13 +198,16 @@ export interface ClauseChatState {
  */
 export interface SidebarTurn {
   id: string;
-  role: 'user' | 'assistant' | 'context';
+  /** 'note' is a reader-authored take saved on a selection — sent to Claude
+   *  as background (like context), but rendered as the reader's own voice
+   *  and does NOT trigger a Claude response on its own. */
+  role: 'user' | 'assistant' | 'context' | 'note';
   content: string;
   streaming?: boolean;
   error?: boolean;
-  /** For 'context' turns: a citation chip shown above the prose. */
+  /** For 'context' and 'note' turns: a citation chip shown above the prose. */
   citation?: string;
-  /** For 'context' turns: the exact phrase the user selected. */
+  /** For 'context' and 'note' turns: the exact phrase the user selected. */
   exact?: string;
 }
 
@@ -222,7 +240,7 @@ export const useNewfound = create<NewfoundState>((set) => ({
   detailSpanId: null,
   detailFocusAnnotationId: null,
   detailFocusToken: 0,
-  explanation: null,
+  explanations: new Map(),
   clauseChat: null,
   sidebarOpen: false,
   sidebarTurns: [],
@@ -306,8 +324,9 @@ export const useNewfound = create<NewfoundState>((set) => ({
   clearFacets: () =>
     set({ facetTypes: new Set(), facetEraMin: null, facetEraMax: null }),
 
-  addSpanAndAnnotation: (span, annotation, side) =>
+  addSpanAndAnnotation: (span, annotation, side, options) =>
     set((s) => {
+      const openPanel = options?.openPanel !== false;
       const nextSpans = [
         ...s.userSpans,
         {
@@ -317,17 +336,19 @@ export const useNewfound = create<NewfoundState>((set) => ({
       ];
       const nextAnnotations = [...s.userAnnotations, annotation];
       const nextPanels = new Map(s.panels);
-      nextPanels.set(span.id, {
-        spanId: span.id,
-        open: true,
-        side,
-        expanded: true,
-      });
+      if (openPanel) {
+        nextPanels.set(span.id, {
+          spanId: span.id,
+          open: true,
+          side,
+          expanded: true,
+        });
+      }
       return {
         userSpans: nextSpans,
         userAnnotations: nextAnnotations,
         panels: nextPanels,
-        selectedSpanId: span.id,
+        selectedSpanId: openPanel ? span.id : s.selectedSpanId,
         composerSelection: null,
         composerOpen: false,
       };
@@ -379,12 +400,29 @@ export const useNewfound = create<NewfoundState>((set) => ({
     set({ detailSpanId: null, detailFocusAnnotationId: null }),
 
   openExplanation: (state) =>
-    set({ explanation: state, composerSelection: null, composerOpen: false }),
-  closeExplanation: () => set({ explanation: null }),
-  pinExplanation: (at) =>
-    set((s) =>
-      s.explanation ? { explanation: { ...s.explanation, pinnedAt: at ?? undefined } } : s,
-    ),
+    set((s) => {
+      const next = new Map(s.explanations);
+      // If a panel for this id already exists, preserve its pinned position
+      // so re-clicking explain on the same phrase doesn't jump it back.
+      const existing = next.get(state.id);
+      next.set(state.id, { ...state, pinnedAt: existing?.pinnedAt ?? state.pinnedAt });
+      return { explanations: next, composerSelection: null, composerOpen: false };
+    }),
+  closeExplanation: (id) =>
+    set((s) => {
+      const next = new Map(s.explanations);
+      next.delete(id);
+      return { explanations: next };
+    }),
+  closeAllExplanations: () => set({ explanations: new Map() }),
+  pinExplanation: (id, at) =>
+    set((s) => {
+      const existing = s.explanations.get(id);
+      if (!existing) return s;
+      const next = new Map(s.explanations);
+      next.set(id, { ...existing, pinnedAt: at ?? undefined });
+      return { explanations: next };
+    }),
 
   openClauseChat: (clauseId) => set({ clauseChat: { clauseId } }),
   closeClauseChat: () => set({ clauseChat: null }),

@@ -30,15 +30,30 @@ export default function AnnotatePill() {
       clause && selection.worldX - clause.world.x < clause.world.width / 2
         ? 'left'
         : 'right';
+    // Stable id keyed off (clauseId, exact phrase). Re-clicking explain on
+    // the same selection reuses the existing panel rather than opening a
+    // duplicate; different selections produce distinct ids that stack in
+    // the lane.
+    const id = `exp-${selection.clauseId}-${hashStr(selection.exact)}`;
     openExplanation({
+      id,
       clauseId: selection.clauseId,
       exact: selection.exact,
+      prefix: selection.prefix,
+      suffix: selection.suffix,
       worldX: selection.worldX,
       worldY: selection.worldY,
       side,
       conceptId: concept?.id,
     });
   };
+
+  // ...stable short hash to derive ids from selection text.
+  function hashStr(s: string): string {
+    let h = 0;
+    for (let i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+    return Math.abs(h).toString(36);
+  }
 
   return (
     <div
