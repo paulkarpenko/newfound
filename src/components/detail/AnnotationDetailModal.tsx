@@ -19,6 +19,7 @@ const TYPE_LABEL: Record<string, string> = {
   media: 'media',
   question: 'question',
   tracker: 'live legal challenge',
+  founding: 'founding-era',
 };
 
 function youtubeEmbedSrc(src: string): string {

@@ -25,6 +25,7 @@ const TYPE_LABEL: Record<string, string> = {
   media: 'media',
   question: 'question',
   tracker: 'tracker',
+  founding: 'founding',
 };
 
 export default function Panel({ laid, expanded, panelHeight, onDragEnd, worldScale }: PanelProps) {

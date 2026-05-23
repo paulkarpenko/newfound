@@ -80,8 +80,13 @@ export default function ClauseOutline({ zoomRef }: ClauseOutlineProps) {
             overflow: 'hidden',
           }}
         >
-          <ScrollArea.Root style={{ maxHeight: '70vh', overflow: 'hidden' }}>
-            <ScrollArea.Viewport style={{ maxHeight: '70vh' }}>
+          <ScrollArea.Root type="auto" style={{ height: '70vh', overflow: 'hidden' }}>
+            <ScrollArea.Viewport
+              // d3-zoom skips wheel events inside data-panel-scrollable, so
+              // the wheel scrolls the outline list instead of zooming the plane.
+              data-panel-scrollable
+              style={{ height: '100%', width: '100%' }}
+            >
               {sections.map((s) => (
                 <div key={s.id} style={{ borderBottom: '1px solid var(--nf-rule-soft)' }}>
                   <div

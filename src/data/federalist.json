@@ -1,0 +1,422 @@
+{
+  "metadata": {
+    "source": "The Federalist Papers",
+    "publishedRange": "1787-1788",
+    "asOf": "2026-05-23",
+    "urlPattern": "https://avalon.law.yale.edu/18th_century/fed{NN}.asp"
+  },
+  "papers": [
+    { "num": 1, "author": "Hamilton", "title": "General Introduction", "era": 1787 },
+    { "num": 2, "author": "Jay", "title": "Concerning Dangers from Foreign Force and Influence", "era": 1787 },
+    { "num": 9, "author": "Hamilton", "title": "The Union as a Safeguard Against Domestic Faction and Insurrection", "era": 1787 },
+    { "num": 10, "author": "Madison", "title": "The Same Subject Continued (The Union as a Safeguard Against Domestic Faction and Insurrection)", "era": 1787 },
+    { "num": 11, "author": "Hamilton", "title": "The Utility of the Union in Respect to Commercial Relations and a Navy", "era": 1787 },
+    { "num": 12, "author": "Hamilton", "title": "The Utility of the Union In Respect to Revenue", "era": 1787 },
+    { "num": 14, "author": "Madison", "title": "Objections to the Proposed Constitution From Extent of Territory Answered", "era": 1787 },
+    { "num": 23, "author": "Hamilton", "title": "The Necessity of a Government as Energetic as the One Proposed", "era": 1787 },
+    { "num": 24, "author": "Hamilton", "title": "The Powers Necessary to the Common Defense Further Considered", "era": 1787 },
+    { "num": 26, "author": "Hamilton", "title": "The Idea of Restraining the Legislative Authority in Regard to the Common Defense", "era": 1787 },
+    { "num": 28, "author": "Hamilton", "title": "The Same Subject Continued (Restraining Legislative Authority)", "era": 1787 },
+    { "num": 29, "author": "Hamilton", "title": "Concerning the Militia", "era": 1788 },
+    { "num": 30, "author": "Hamilton", "title": "Concerning the General Power of Taxation", "era": 1787 },
+    { "num": 33, "author": "Hamilton", "title": "The Same Subject Continued (Concerning the General Power of Taxation)", "era": 1788 },
+    { "num": 39, "author": "Madison", "title": "The Conformity of the Plan to Republican Principles", "era": 1788 },
+    { "num": 41, "author": "Madison", "title": "General View of the Powers Conferred by the Constitution", "era": 1788 },
+    { "num": 42, "author": "Madison", "title": "The Powers Conferred by the Constitution Further Considered", "era": 1788 },
+    { "num": 43, "author": "Madison", "title": "The Same Subject Continued (The Powers Conferred by the Constitution)", "era": 1788 },
+    { "num": 44, "author": "Madison", "title": "Restrictions on the Authority of the Several States", "era": 1788 },
+    { "num": 45, "author": "Madison", "title": "The Alleged Danger From the Powers of the Union to the State Governments Considered", "era": 1788 },
+    { "num": 46, "author": "Madison", "title": "The Influence of the State and Federal Governments Compared", "era": 1788 },
+    { "num": 47, "author": "Madison", "title": "The Particular Structure of the New Government and the Distribution of Power", "era": 1788 },
+    { "num": 48, "author": "Madison", "title": "These Departments Should Not Be So Far Separated as to Have No Constitutional Control Over Each Other", "era": 1788 },
+    { "num": 51, "author": "Madison", "title": "The Structure of the Government Must Furnish the Proper Checks and Balances", "era": 1788 },
+    { "num": 52, "author": "Madison", "title": "The House of Representatives", "era": 1788 },
+    { "num": 53, "author": "Madison", "title": "The Same Subject Continued (The House of Representatives)", "era": 1788 },
+    { "num": 55, "author": "Madison", "title": "The Total Number of the House of Representatives", "era": 1788 },
+    { "num": 57, "author": "Madison", "title": "The Alleged Tendency of the New Plan to Elevate the Few at the Expense of the Many", "era": 1788 },
+    { "num": 58, "author": "Madison", "title": "Objection That The Number of Members Will Not Be Augmented", "era": 1788 },
+    { "num": 59, "author": "Hamilton", "title": "Concerning the Power of Congress to Regulate the Election of Members", "era": 1788 },
+    { "num": 62, "author": "Madison", "title": "The Senate", "era": 1788 },
+    { "num": 63, "author": "Madison", "title": "The Senate Continued", "era": 1788 },
+    { "num": 64, "author": "Jay", "title": "The Powers of the Senate", "era": 1788 },
+    { "num": 65, "author": "Hamilton", "title": "The Powers of the Senate Continued (Impeachment)", "era": 1788 },
+    { "num": 67, "author": "Hamilton", "title": "The Executive Department", "era": 1788 },
+    { "num": 68, "author": "Hamilton", "title": "The Mode of Electing the President", "era": 1788 },
+    { "num": 69, "author": "Hamilton", "title": "The Real Character of the Executive", "era": 1788 },
+    { "num": 70, "author": "Hamilton", "title": "The Executive Department Further Considered (Energy in the Executive)", "era": 1788 },
+    { "num": 71, "author": "Hamilton", "title": "The Duration in Office of the Executive", "era": 1788 },
+    { "num": 73, "author": "Hamilton", "title": "The Provision For The Support of the Executive, and the Veto Power", "era": 1788 },
+    { "num": 74, "author": "Hamilton", "title": "The Command of the Military and Naval Forces, and the Pardoning Power", "era": 1788 },
+    { "num": 75, "author": "Hamilton", "title": "The Treaty-Making Power of the Executive", "era": 1788 },
+    { "num": 76, "author": "Hamilton", "title": "The Appointing Power of the Executive", "era": 1788 },
+    { "num": 78, "author": "Hamilton", "title": "The Judiciary Department", "era": 1788 },
+    { "num": 79, "author": "Hamilton", "title": "The Judiciary Continued", "era": 1788 },
+    { "num": 80, "author": "Hamilton", "title": "The Powers of the Judiciary", "era": 1788 },
+    { "num": 81, "author": "Hamilton", "title": "The Judiciary Continued, and the Distribution of the Judicial Authority", "era": 1788 },
+    { "num": 83, "author": "Hamilton", "title": "The Judiciary Continued in Relation to Trial by Jury", "era": 1788 },
+    { "num": 84, "author": "Hamilton", "title": "Certain General and Miscellaneous Objections to the Constitution Considered and Answered", "era": 1788 },
+    { "num": 85, "author": "Hamilton", "title": "Concluding Remarks", "era": 1788 }
+  ],
+  "annotations": [
+    {
+      "paper": 1,
+      "clauseId": "preamble-cl-1",
+      "quote": { "exact": "We the People", "prefix": "", "suffix": " of the United States" },
+      "body": "Hamilton opens the project: 'It has been frequently remarked, that it seems to have been reserved to the people of this country, by their conduct and example, to decide the important question, whether societies of men are really capable or not, of establishing good government from reflection and choice, or whether they are forever destined to depend, for their political constitutions, on accident and force.' The Preamble's first words are that decision, made aloud."
+    },
+    {
+      "paper": 2,
+      "clauseId": "preamble-cl-1",
+      "quote": { "exact": "a more perfect Union", "prefix": "in Order to form ", "suffix": "," },
+      "body": "Jay argues that the people of America are 'one connected, fertile, wide-spreading country' bound by 'similar manners and customs' and a common cause through war — a people already, in substance, a nation. The Union the Preamble proposes is not an invention; it is a recognition of what the Revolution had already made."
+    },
+    {
+      "paper": 9,
+      "clauseId": "art-4-sec-4",
+      "quote": { "exact": "a Republican Form of Government", "prefix": "Union ", "suffix": "," },
+      "body": "Hamilton answers the ancient objection that republics fall to faction: the modern political sciences — separation of powers, legislative checks, an independent judiciary, representation, and the enlargement of the orbit — make a large confederate republic durable. The Guarantee Clause secures that form against backsliding inside the states."
+    },
+    {
+      "paper": 10,
+      "clauseId": "preamble-cl-1",
+      "quote": { "exact": "a more perfect Union", "prefix": "in Order to form ", "suffix": "," },
+      "body": "Madison's most famous argument: a large, diverse republic is the surest cure for the 'mischiefs of faction.' Small republics are easily captured by overbearing majorities; the extended union encompasses so many competing interests that no single faction can dominate. The federal design does not abolish faction — it makes faction safe by dispersing it."
+    },
+    {
+      "paper": 10,
+      "clauseId": "art-4-sec-4",
+      "quote": { "exact": "a Republican Form of Government", "prefix": "Union ", "suffix": "," },
+      "body": "Madison distinguishes a pure democracy from a republic: the republic delegates governance to a small body of citizens, refining and enlarging public views by passing them through a chosen medium. The Guarantee Clause locks the states into that representative form precisely because the extended republic depends on every part of it sharing that structure."
+    },
+    {
+      "paper": 11,
+      "clauseId": "art-1-sec-8-cl-3",
+      "quote": { "exact": "to regulate Commerce with foreign Nations", "prefix": "Power ", "suffix": ", and among the several States" },
+      "body": "Hamilton argues that an active Union with a unified commercial policy will turn the United States into a force European powers must reckon with, rather than thirteen weak parties to be played against each other. Concentrating the commerce power is the prerequisite for both prosperity and a maritime defense."
+    },
+    {
+      "paper": 12,
+      "clauseId": "art-1-sec-8-cl-1",
+      "quote": { "exact": "To lay and collect Taxes, Duties, Imposts and Excises", "prefix": "Power ", "suffix": ", to pay the Debts" },
+      "body": "Hamilton ties the taxing power to the commerce power: revenue from imposts depends on commerce, and commerce depends on a national government strong enough to protect it. The Constitution's broad fiscal authority is what allows the new republic to honor its debts and breathe."
+    },
+    {
+      "paper": 14,
+      "clauseId": "preamble-cl-1",
+      "quote": { "exact": "a more perfect Union", "prefix": "in Order to form ", "suffix": "," },
+      "body": "Madison answers the Anti-Federalist worry that a republic cannot govern so large a territory. He distinguishes pure democracies (where the people meet directly) from representative republics (where they govern through elected officials), and notes that the extent of the new union is comparable to the size of European states already governed without convulsion."
+    },
+    {
+      "paper": 23,
+      "clauseId": "art-1-sec-8-cl-1",
+      "quote": { "exact": "to pay the Debts and provide for the common Defence and general Welfare", "prefix": "Excises, ", "suffix": " of the United States" },
+      "body": "Hamilton's principle of correspondence: the means ought to be proportioned to the end. Because the federal government is charged with defense and the general welfare, its constitutional powers — taxation, raising armies, regulating commerce — must be as broad as the responsibilities themselves. Anything less is a deliberate disablement."
+    },
+    {
+      "paper": 24,
+      "clauseId": "art-1-sec-8-cl-12",
+      "quote": { "exact": "to raise and support Armies", "prefix": "Power ", "suffix": ", but no Appropriation" },
+      "body": "Hamilton defends a standing army as a fact of life in an Atlantic world dominated by European empires. The two-year appropriation limit is the constitutional check: Congress must affirmatively re-fund the army in every session, making it impossible to sustain a force the legislature does not actively will into existence."
+    },
+    {
+      "paper": 26,
+      "clauseId": "art-1-sec-8-cl-12",
+      "quote": { "exact": "no Appropriation of Money to that Use shall be for a longer Term than two Years", "prefix": "Armies, but ", "suffix": "." },
+      "body": "Hamilton: the two-year cap is the great structural safeguard against a permanent military establishment beyond civilian control. By forcing the legislature to deliberate the army's existence in every session, the Constitution embeds the question of force into the ordinary politics of representation."
+    },
+    {
+      "paper": 28,
+      "clauseId": "art-1-sec-8-cl-15",
+      "quote": { "exact": "to provide for calling forth the Militia", "prefix": "Power ", "suffix": " to execute the Laws" },
+      "body": "Hamilton argues that the militia is the citizen's check on tyranny — both against insurrection and against any government overstepping its bounds. Federal authority to call forth the militia is not in tension with that check; it is the institutional form of it, because the militia remains the people in arms."
+    },
+    {
+      "paper": 29,
+      "clauseId": "art-1-sec-8-cl-16",
+      "quote": { "exact": "to provide for organizing, arming, and disciplining, the Militia", "prefix": "Power ", "suffix": ", and for governing" },
+      "body": "Hamilton's vision: a well-regulated militia is the people themselves, organized for defense. A national power to set uniform standards for militia organization is the only way the militia can actually function as a counterweight to a standing army; the states retain officer appointment and training, keeping the force grounded in local civic life."
+    },
+    {
+      "paper": 30,
+      "clauseId": "art-1-sec-8-cl-1",
+      "quote": { "exact": "To lay and collect Taxes, Duties, Imposts and Excises", "prefix": "Power ", "suffix": ", to pay the Debts" },
+      "body": "Hamilton's foundational fiscal argument: a government without an independent power of taxation is a government on perpetual mercy. Money is the vital principle of the body politic; cutting off the supply forces the state into 'a continued scene of imbecility' from which no republic has ever recovered."
+    },
+    {
+      "paper": 33,
+      "clauseId": "art-1-sec-8-cl-18",
+      "quote": { "exact": "necessary and proper", "prefix": "which shall be ", "suffix": " for carrying" },
+      "body": "Hamilton: the Necessary and Proper Clause is 'perfectly harmless' — declaratory of a truth that would have followed by necessary and unavoidable implication from the very act of constituting a federal government. The clause cannot expand the foregoing powers; it only secures the means to execute them. Read otherwise, every grant of power in the document would be ineffectual."
+    },
+    {
+      "paper": 33,
+      "clauseId": "art-6-cl-1",
+      "quote": { "exact": "shall be the supreme Law of the Land", "prefix": "United States, ", "suffix": "; and the Judges" },
+      "body": "Hamilton's defense of the Supremacy Clause: a law by definition must operate over a defined sphere; if state laws could override federal laws within the federal sphere, federal law would not be law at all. The clause does not create federal supremacy — it acknowledges that any working federal authority requires it."
+    },
+    {
+      "paper": 39,
+      "clauseId": "art-4-sec-4",
+      "quote": { "exact": "a Republican Form of Government", "prefix": "Union ", "suffix": "," },
+      "body": "Madison defines a republic: a government deriving all its powers directly or indirectly from the great body of the people, administered by persons holding offices for a limited period or during good behaviour. The Constitution, he argues, is strictly conformable to that test in every part — Congress, the executive, the judiciary all trace back, by one chain of election or another, to popular consent."
+    },
+    {
+      "paper": 39,
+      "clauseId": "art-7-cl-1",
+      "quote": { "exact": "The Ratification of the Conventions of nine States, shall be sufficient", "prefix": "", "suffix": " for the Establishment" },
+      "body": "Madison: ratification is the act of the people, not the states as governments. The convention requirement places the new Constitution on the only ground that can give it permanent authority — the same ground from which the state constitutions themselves derived. This is what makes the Constitution a higher law than any ordinary statute."
+    },
+    {
+      "paper": 41,
+      "clauseId": "art-1-sec-8-cl-1",
+      "quote": { "exact": "the common Defence and general Welfare", "prefix": "provide for ", "suffix": " of the United States" },
+      "body": "Madison responds to the charge that the 'general Welfare' language is a blank check. The phrase is followed by an enumeration of specific powers — it cannot reasonably be read as a free-standing grant that would render that enumeration meaningless. The general words describe the purpose; the enumeration is the substance."
+    },
+    {
+      "paper": 42,
+      "clauseId": "art-1-sec-8-cl-4",
+      "quote": { "exact": "to establish an uniform Rule of Naturalization", "prefix": "Power ", "suffix": ", and uniform Laws" },
+      "body": "Madison: under the Articles of Confederation, a citizen made in one state could be denied the privileges of citizenship in another, producing 'embarrassments' that could not be remedied except by a single national rule. The naturalization power eliminates conflicting state regimes and gives the United States a coherent citizenship."
+    },
+    {
+      "paper": 42,
+      "clauseId": "art-4-sec-1",
+      "quote": { "exact": "Full Faith and Credit", "prefix": "", "suffix": " shall be given" },
+      "body": "Madison frames Full Faith and Credit as a measure for cementing the union: judgments and records ought to be portable across state lines so the federation does not dissolve into thirteen separate legal worlds. Congress's power to prescribe the manner of proof is what gives the clause practical effect."
+    },
+    {
+      "paper": 43,
+      "clauseId": "art-1-sec-8-cl-8",
+      "quote": { "exact": "to promote the Progress of Science and useful Arts", "prefix": "Power ", "suffix": ", by securing" },
+      "body": "Madison on the patent and copyright power: 'The utility of this power will scarcely be questioned.' The public good — the progress of knowledge — happens to coincide here with the just claims of authors and inventors. Without a uniform federal rule, an author secured in one state would be exposed in another."
+    },
+    {
+      "paper": 43,
+      "clauseId": "art-5-cl-1",
+      "quote": { "exact": "shall propose Amendments to this Constitution", "prefix": "necessary, shall ", "suffix": ", or, on the Application" },
+      "body": "Madison defends the amendment process as 'guarding equally against that extreme facility which would render the Constitution too mutable, and that extreme difficulty which might perpetuate its discovered faults.' The double supermajority threads that needle — change is possible, but only with broad national agreement."
+    },
+    {
+      "paper": 43,
+      "clauseId": "art-4-sec-4",
+      "quote": { "exact": "shall guarantee to every State in this Union a Republican Form of Government", "prefix": "United States ", "suffix": ", and shall protect" },
+      "body": "Madison: a confederate republic cannot survive if its constituent parts cease to be republican. The Guarantee Clause is the Union's standing commitment that the political character of every state shall remain that of self-government — the precondition for the federal compact to hold."
+    },
+    {
+      "paper": 44,
+      "clauseId": "art-1-sec-8-cl-18",
+      "quote": { "exact": "necessary and proper", "prefix": "which shall be ", "suffix": " for carrying" },
+      "body": "Madison reads the Necessary and Proper Clause as inescapable: 'Without the substance of this power, the whole Constitution would be a dead letter.' Had the framers attempted to enumerate every conceivable means in advance, the document would have been a digest of laws rather than a constitution. The clause leaves choice of means to the legislature, where it belongs."
+    },
+    {
+      "paper": 44,
+      "clauseId": "art-1-sec-10",
+      "quote": { "exact": "No State shall enter into any Treaty, Alliance, or Confederation", "prefix": "", "suffix": "; grant Letters" },
+      "body": "Madison enumerates and defends the prohibitions on state action — treaty-making, coinage, paper money, ex post facto laws, impairing contracts. Each was an answer to a specific abuse under the Articles. The states' freedom to make these mistakes had nearly dissolved the confederation; the prohibitions are the price of union."
+    },
+    {
+      "paper": 45,
+      "clauseId": "amend-10-cl-1",
+      "quote": { "exact": "are reserved to the States respectively, or to the people", "prefix": "to the States, ", "suffix": "." },
+      "body": "Madison's reassurance: 'The powers delegated by the proposed Constitution to the federal government, are few and defined. Those which are to remain in the State governments are numerous and indefinite.' The Tenth Amendment will later make explicit what Madison here treats as already implicit in the structure of enumeration."
+    },
+    {
+      "paper": 46,
+      "clauseId": "amend-10-cl-1",
+      "quote": { "exact": "The powers not delegated to the United States by the Constitution", "prefix": "", "suffix": ", nor prohibited" },
+      "body": "Madison argues that the state and federal governments are 'in fact but different agents and trustees of the people, instituted with different powers, and designated for different purposes.' The Tenth Amendment's reservation is the structural recognition of that division — the federal government has only what is delegated, the rest stays where it began."
+    },
+    {
+      "paper": 47,
+      "clauseId": "art-1-sec-1",
+      "quote": { "exact": "All legislative Powers herein granted shall be vested in a Congress of the United States", "prefix": "", "suffix": ", which shall consist" },
+      "body": "Madison answers the charge that the Constitution violates separation of powers. Montesquieu, he argues, never required complete isolation — only that no one department exercise the whole power of another. The Vesting Clauses establish three distinct departments; the document's overlapping checks are not a violation of the principle but the working of it."
+    },
+    {
+      "paper": 48,
+      "clauseId": "art-1-sec-1",
+      "quote": { "exact": "All legislative Powers herein granted shall be vested in a Congress of the United States", "prefix": "", "suffix": ", which shall consist" },
+      "body": "Madison's warning about the legislative branch: it is 'everywhere extending the sphere of its activity, and drawing all power into its impetuous vortex.' Vesting clauses alone are not enough — the executive and judicial departments must have constitutional means of defense, or legislative supremacy will swallow them."
+    },
+    {
+      "paper": 51,
+      "clauseId": "art-1-sec-1",
+      "quote": { "exact": "All legislative Powers herein granted shall be vested in a Congress of the United States", "prefix": "", "suffix": ", which shall consist" },
+      "body": "Madison's structural defense of separation of powers: each branch must have 'the necessary constitutional means and personal motives to resist encroachments of the others.' 'If men were angels, no government would be necessary. If angels were to govern men, neither external nor internal controls on government would be necessary.' Ambition is set against ambition; the vesting clauses give each branch the platform from which to do that."
+    },
+    {
+      "paper": 51,
+      "clauseId": "art-2-sec-1",
+      "quote": { "exact": "The executive Power shall be vested in a President of the United States of America", "prefix": "", "suffix": ". He shall hold" },
+      "body": "Madison: 'In framing a government which is to be administered by men over men, the great difficulty lies in this: you must first enable the government to control the governed; and in the next place oblige it to control itself.' The executive vesting clause provides one of the three poles between which that controlling tension is suspended."
+    },
+    {
+      "paper": 51,
+      "clauseId": "art-3-sec-1",
+      "quote": { "exact": "The judicial Power of the United States, shall be vested in one supreme Court", "prefix": "", "suffix": ", and in such inferior" },
+      "body": "Madison: a federal republic needs a third department whose members hold office on terms that insulate them from the other two — life tenure during good behaviour, undiminished salary. Only such a court can serve as a neutral arbiter when the political branches collide with the Constitution or with each other."
+    },
+    {
+      "paper": 52,
+      "clauseId": "art-1-sec-2",
+      "quote": { "exact": "The House of Representatives shall be composed of Members chosen every second Year by the People", "prefix": "", "suffix": " of the several States" },
+      "body": "Madison defends the two-year term as a deliberate balance: long enough that Representatives can master the work of legislation, short enough that the People retain frequent power of recall. Direct popular election by the People — not state legislatures — anchors the House as the immediately democratic chamber."
+    },
+    {
+      "paper": 53,
+      "clauseId": "art-1-sec-2",
+      "quote": { "exact": "every second Year", "prefix": "chosen ", "suffix": " by the People" },
+      "body": "Madison answers those who urged annual elections by invoking the maxim that 'where annual elections end, tyranny begins.' He shows the principle is contingent on the kind of government and observes that several states already use biennial terms successfully. The federal Representative's wider portfolio justifies the longer term."
+    },
+    {
+      "paper": 55,
+      "clauseId": "art-1-sec-2",
+      "quote": { "exact": "The House of Representatives shall be composed of Members chosen every second Year by the People of the several States", "prefix": "", "suffix": "," },
+      "body": "Madison concedes that the initial House is small but argues the census mechanism will scale it to a proper size as the population grows. Too small a body invites factional capture; too large a body becomes a 'mob' incapable of deliberation. The Constitution sets a floor and lets growth do the rest."
+    },
+    {
+      "paper": 57,
+      "clauseId": "art-1-sec-2",
+      "quote": { "exact": "chosen every second Year by the People of the several States", "prefix": "Members ", "suffix": ", and the Electors" },
+      "body": "Madison: 'Who are to be the electors of the federal representatives? Not the rich more than the poor; not the learned more than the ignorant.' The qualification is being a citizen, and the chosen are subject to the same laws they enact. The structural answer to the charge of elitism is that the House is anchored in universal qualifications and frequent return to the voters."
+    },
+    {
+      "paper": 58,
+      "clauseId": "art-1-sec-2",
+      "quote": { "exact": "an Inhabitant of that State", "prefix": "be ", "suffix": " in which he shall be chosen" },
+      "body": "Madison defends the residency requirement: the Representative must be of and from the community he represents, not a transient parachuted in. The inhabitant rule keeps the House grounded in local knowledge while the Constitution's other devices supply national perspective."
+    },
+    {
+      "paper": 59,
+      "clauseId": "art-1-sec-4",
+      "quote": { "exact": "the Congress may at any time by Law make or alter such Regulations", "prefix": "thereof; but ", "suffix": ", except as to" },
+      "body": "Hamilton: leaving every aspect of federal election timing and procedure entirely to the states would have given any handful of legislatures the power to dissolve the federal government simply by declining to schedule elections. The federal override is a defensive backstop — the means by which Congress can keep itself in existence."
+    },
+    {
+      "paper": 62,
+      "clauseId": "art-1-sec-3",
+      "quote": { "exact": "The Senate of the United States shall be composed of two Senators from each State", "prefix": "", "suffix": ", chosen by the Legislature" },
+      "body": "Madison (or Hamilton) defends equal state representation in the Senate as the residue of state sovereignty inside the federal structure. Beyond that, a smaller, longer-tenured body furnishes the qualities the House cannot: continuity, deliberation, and a bulwark against the 'sudden and violent passions' that can sweep a popular assembly."
+    },
+    {
+      "paper": 63,
+      "clauseId": "art-1-sec-3",
+      "quote": { "exact": "for six Years", "prefix": "thereof, ", "suffix": "; and each Senator" },
+      "body": "Madison: 'a body which is to correct this infirmity ought itself to be free from it.' The six-year term, staggered into thirds, gives the Senate a kind of institutional memory that frequent rotation forbids — the patience to take a long view, the spine to disappoint a momentary majority."
+    },
+    {
+      "paper": 64,
+      "clauseId": "art-2-sec-2",
+      "quote": { "exact": "by and with the Advice and Consent of the Senate, to make Treaties", "prefix": "Power, ", "suffix": ", provided two thirds" },
+      "body": "Jay defends the President-plus-Senate treaty mechanism as a careful balance: the President supplies dispatch and secrecy, the Senate supplies deliberation and the long-tenured judgment that foreign affairs demand. The two-thirds threshold ensures no treaty binds the nation without supermajority sectional consent."
+    },
+    {
+      "paper": 65,
+      "clauseId": "art-1-sec-3",
+      "quote": { "exact": "The Senate shall have the sole Power to try all Impeachments", "prefix": "", "suffix": ". When sitting" },
+      "body": "Hamilton on the Senate as impeachment court: the body must be 'sufficiently dignified' and 'sufficiently independent' to render an impartial judgment between the accused and the representatives of the people. No other tribunal in the new government meets that test; the Supreme Court is too small, the Court of last resort too political, and a special tribunal would be untested."
+    },
+    {
+      "paper": 67,
+      "clauseId": "art-2-sec-1",
+      "quote": { "exact": "The executive Power shall be vested in a President of the United States of America", "prefix": "", "suffix": ". He shall hold" },
+      "body": "Hamilton opens the executive series by clearing the air: the President is not a monarch. The single executive is bounded by enumerated powers, by impeachment, by elections, and by Senate concurrence in the most consequential acts. Single-headed executive does not mean unaccountable executive."
+    },
+    {
+      "paper": 68,
+      "clauseId": "art-2-sec-1",
+      "quote": { "exact": "Each State shall appoint, in such Manner as the Legislature thereof may direct, a Number of Electors", "prefix": "for the same Term. ", "suffix": ", equal to the whole Number" },
+      "body": "Hamilton: the electoral college was designed so that the choice of President would be made by 'a small number of persons, selected by their fellow-citizens from the general mass,' likely to possess the information and discernment requisite. The hope was for a process insulated from 'tumult and disorder' — that hope has been tested in every century since."
+    },
+    {
+      "paper": 69,
+      "clauseId": "art-2-sec-2",
+      "quote": { "exact": "The President shall be Commander in Chief of the Army and Navy", "prefix": "", "suffix": " of the United States" },
+      "body": "Hamilton compares the President's powers to those of the British king and finds them carefully limited. The Commander-in-Chief role here is 'first General and admiral' — it commits the President to direct the forces, but the power to declare war, raise armies, and appropriate funds remains with Congress."
+    },
+    {
+      "paper": 70,
+      "clauseId": "art-2-sec-1",
+      "quote": { "exact": "The executive Power shall be vested in a President of the United States of America", "prefix": "", "suffix": ". He shall hold" },
+      "body": "Hamilton's defense of the single executive: 'Energy in the executive is a leading character in the definition of good government.' A plural executive would breed dissension, dilute responsibility, and obscure accountability. Concentrating the office in one person — visible, identifiable, removable — is the only way the people can know whom to thank or whom to blame."
+    },
+    {
+      "paper": 71,
+      "clauseId": "art-2-sec-1",
+      "quote": { "exact": "during the Term of four Years", "prefix": "his Office ", "suffix": ", and, together" },
+      "body": "Hamilton defends the four-year term: long enough for the executive to act on settled principles and resist the 'sudden breeze of passion' from the legislature, short enough to remain answerable to the people. Reeligibility was central to that calculation — the prospect of a second term aligns the President's interest with the public's judgment."
+    },
+    {
+      "paper": 73,
+      "clauseId": "art-1-sec-7",
+      "quote": { "exact": "Every Bill which shall have passed the House of Representatives and the Senate", "prefix": "", "suffix": ", shall, before it become a Law" },
+      "body": "Hamilton on the veto: the qualified negative is not the king's absolute veto. It is a 'shield' the executive needs against legislative encroachment and a brake on hasty laws. The two-thirds override returns the final word to a chastened legislature — neither branch alone can pass a law against the considered judgment of the other."
+    },
+    {
+      "paper": 74,
+      "clauseId": "art-2-sec-2",
+      "quote": { "exact": "The President shall be Commander in Chief of the Army and Navy", "prefix": "", "suffix": " of the United States" },
+      "body": "Hamilton: command of the military 'most peculiarly demands those qualities which distinguish the exercise of power by a single hand.' Direction of war requires speed, secrecy, and unity of command. The Constitution vests that direction in the President while reserving the decision to go to war to Congress."
+    },
+    {
+      "paper": 75,
+      "clauseId": "art-2-sec-2",
+      "quote": { "exact": "to make Treaties, provided two thirds of the Senators present concur", "prefix": "Senate, ", "suffix": "; and he shall nominate" },
+      "body": "Hamilton: treaty-making is neither purely legislative nor purely executive. It demands the secrecy and dispatch of a single negotiator and the deliberative consent of a body. The Constitution does not give the power to either branch alone; it forces them to act together, and at the highest threshold the document uses."
+    },
+    {
+      "paper": 76,
+      "clauseId": "art-2-sec-2",
+      "quote": { "exact": "he shall nominate, and by and with the Advice and Consent of the Senate, shall appoint", "prefix": "concur; and ", "suffix": " Ambassadors" },
+      "body": "Hamilton: the President nominates because one person can choose with more discernment than a body; the Senate confirms to prevent favoritism and 'an unfit character.' The structure assigns the burden of bad appointments to the President and the burden of obstruction to the Senate — both visible, both answerable."
+    },
+    {
+      "paper": 78,
+      "clauseId": "art-3-sec-1",
+      "quote": { "exact": "The judicial Power of the United States, shall be vested in one supreme Court", "prefix": "", "suffix": ", and in such inferior" },
+      "body": "Hamilton's defense of the federal judiciary and judicial review. The judiciary is 'beyond comparison the weakest of the three departments of power' — it commands neither sword nor purse, only judgment. Yet that judgment includes the power to declare any legislative act repugnant to the Constitution void. Judicial review is not a usurpation but the necessary consequence of a written constitution superior to ordinary law."
+    },
+    {
+      "paper": 78,
+      "clauseId": "art-3-sec-1",
+      "quote": { "exact": "shall hold their Offices during good Behaviour", "prefix": "Courts, ", "suffix": ", and shall, at stated Times" },
+      "body": "Hamilton on life tenure: 'nothing can contribute so much to its firmness and independence as permanency in office.' A judge afraid of losing his post will not stand against a legislative majority bent on overstepping the Constitution. Good behaviour, undiminished salary — these are the structural conditions of judicial independence."
+    },
+    {
+      "paper": 80,
+      "clauseId": "art-3-sec-2",
+      "quote": { "exact": "all Cases, in Law and Equity, arising under this Constitution", "prefix": "extend to ", "suffix": ", the Laws of the United States" },
+      "body": "Hamilton enumerates the heads of federal jurisdiction: cases arising under the Constitution and federal law, cases touching foreign relations, controversies between states or between citizens of different states. Each is given to the federal courts because no state court could decide it with the impartiality the Union requires."
+    },
+    {
+      "paper": 81,
+      "clauseId": "art-3-sec-1",
+      "quote": { "exact": "in such inferior Courts as the Congress may from time to time ordain and establish", "prefix": "Court, and ", "suffix": ". The Judges" },
+      "body": "Hamilton: leaving the structure of inferior federal courts to Congress is the right kind of flexibility. The country's needs will change; the size, number, and location of federal courts must change with them. The Constitution fixes the apex and leaves the rest to legislative judgment."
+    },
+    {
+      "paper": 83,
+      "clauseId": "art-3-sec-2",
+      "quote": { "exact": "The Trial of all Crimes, except in Cases of Impeachment, shall be by Jury", "prefix": "", "suffix": "; and such Trial" },
+      "body": "Hamilton answers the Anti-Federalist alarm that the Constitution omits civil jury trial. He defends the criminal jury as 'a valuable safeguard to liberty' — the citizen judged by his peers — and argues that the silence on civil juries reflects irreducible state-to-state variation rather than hostility to the right. (The Seventh Amendment would later make the civil-jury guarantee explicit.)"
+    },
+    {
+      "paper": 84,
+      "clauseId": "art-1-sec-9",
+      "quote": { "exact": "The Privilege of the Writ of Habeas Corpus shall not be suspended", "prefix": "", "suffix": ", unless when in Cases of Rebellion" },
+      "body": "Hamilton: 'The establishment of the writ of habeas corpus, the prohibition of ex post facto laws, and of titles of nobility… are perhaps greater securities to liberty and republicanism than any it contains.' Hamilton uses Article I §9 to argue that the Constitution already contains a substantive bill of rights — the famous Federalist 84 case against a separate enumeration."
+    },
+    {
+      "paper": 84,
+      "clauseId": "amend-9-cl-1",
+      "quote": { "exact": "shall not be construed to deny or disparage others retained by the people", "prefix": "rights, ", "suffix": "." },
+      "body": "Federalist 84 warned that enumerating rights would imply that those omitted were not protected — that 'bills of rights are not only unnecessary in the proposed Constitution, but would even be dangerous.' The Ninth Amendment is, in effect, the answer to Hamilton's objection: an enumeration that explicitly denies the negative inference."
+    },
+    {
+      "paper": 85,
+      "clauseId": "art-5-cl-1",
+      "quote": { "exact": "shall propose Amendments to this Constitution", "prefix": "necessary, shall ", "suffix": ", or, on the Application" },
+      "body": "Hamilton's closing argument: the Constitution need not be perfect to be ratified. Amendment is built into the document. Any defect discovered through experience may be cured by the same people who established the original. The act of ratification is a beginning, not a final settlement."
+    }
+  ]
+}

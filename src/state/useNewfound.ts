@@ -67,6 +67,12 @@ interface NewfoundState {
   /** Whether the composer dialog is actually open (after the pill is clicked). */
   composerOpen: boolean;
 
+  /** Active explanation popover (a transient panel — not persisted as an annotation). */
+  explanation: ExplanationState | null;
+
+  /** Active clause chat — full-clause "explain this section" chat panel. */
+  clauseChat: ClauseChatState | null;
+
   /** Detail modal — central modal showing all annotations on a span. */
   detailSpanId: string | null;
   /** Initial annotation to scroll into view inside the detail modal. */
@@ -113,12 +119,50 @@ interface NewfoundState {
   openDetail(spanId: string, focusAnnotationId?: string | null): void;
   closeDetail(): void;
 
+  openExplanation(state: ExplanationState): void;
+  closeExplanation(): void;
+  pinExplanation(at: { x: number; y: number } | null): void;
+
+  openClauseChat(clauseId: string): void;
+  closeClauseChat(): void;
+  pinClauseChat(at: { x: number; y: number } | null): void;
+
   pulseClause(id: string): void;
   clearPulse(id: string): void;
 
   setInteracting(value: boolean): void;
 
   setTheme(t: ThemeName): void;
+}
+
+/**
+ * State of an "explain this" popover — a transient world-anchored panel
+ * showing a Feynman-style explanation of the selected concept. Not persisted
+ * as an annotation; cleared via closeExplanation().
+ */
+export interface ExplanationState {
+  clauseId: string;
+  exact: string;
+  /** world-space anchor (where the selection sits) */
+  worldX: number;
+  worldY: number;
+  /** which side of the column the panel should pop into */
+  side: 'left' | 'right';
+  /** id from concepts.json — optional; missing means stream a live answer instead. */
+  conceptId?: string;
+  /** when the reader drags the panel, its world position is fixed here. */
+  pinnedAt?: { x: number; y: number };
+}
+
+/**
+ * Clause-level chat. Opened by the "explain" button next to a clause title;
+ * the chat panel streams a Claude-authored explanation of why the clause
+ * exists and supports follow-up questions. Screen-space, draggable.
+ */
+export interface ClauseChatState {
+  clauseId: string;
+  /** screen-space top-left, in pixels. */
+  pinnedAt?: { x: number; y: number };
 }
 
 /** A pending text selection captured by the composer. */
@@ -150,6 +194,8 @@ export const useNewfound = create<NewfoundState>((set) => ({
   detailSpanId: null,
   detailFocusAnnotationId: null,
   detailFocusToken: 0,
+  explanation: null,
+  clauseChat: null,
   pulseClauseId: null,
   pulseToken: 0,
   interacting: false,
@@ -301,6 +347,21 @@ export const useNewfound = create<NewfoundState>((set) => ({
     })),
   closeDetail: () =>
     set({ detailSpanId: null, detailFocusAnnotationId: null }),
+
+  openExplanation: (state) =>
+    set({ explanation: state, composerSelection: null, composerOpen: false }),
+  closeExplanation: () => set({ explanation: null }),
+  pinExplanation: (at) =>
+    set((s) =>
+      s.explanation ? { explanation: { ...s.explanation, pinnedAt: at ?? undefined } } : s,
+    ),
+
+  openClauseChat: (clauseId) => set({ clauseChat: { clauseId } }),
+  closeClauseChat: () => set({ clauseChat: null }),
+  pinClauseChat: (at) =>
+    set((s) =>
+      s.clauseChat ? { clauseChat: { ...s.clauseChat, pinnedAt: at ?? undefined } } : s,
+    ),
 
   pulseClause: (id) =>
     set((s) => ({ pulseClauseId: id, pulseToken: s.pulseToken + 1 })),

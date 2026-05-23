@@ -48,6 +48,10 @@
   /* Tracker = a contemporary legal challenge to the text. Warmer / louder
      than interpretive types so it reads as live, current, urgent. */
   --nf-type-tracker: #a25a25;
+  /* Founding-era explication — sage green, calm and old. The voice of
+     Madison/Hamilton/Jay arguing for the document while it was being
+     ratified. */
+  --nf-type-founding: #6e7e6a;
 
   --nf-focus: #2f5d97;
 }
@@ -80,6 +84,12 @@
   --nf-type-media: #b08698;
   --nf-type-question: #a07a5e;
   --nf-type-tracker: #d68d54;
+  --nf-type-founding: #8a9a86;
 
   --nf-focus: #6a9fde;
+}
+
+@keyframes nf-cursor-blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
 }

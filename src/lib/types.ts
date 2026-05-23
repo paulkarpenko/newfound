@@ -6,7 +6,8 @@ export type AnnotationType =
   | 'context'
   | 'media'
   | 'question'
-  | 'tracker';
+  | 'tracker'
+  | 'founding';
 
 export const ANNOTATION_TYPES: AnnotationType[] = [
   'interpretation',
@@ -17,6 +18,7 @@ export const ANNOTATION_TYPES: AnnotationType[] = [
   'media',
   'question',
   'tracker',
+  'founding',
 ];
 
 /**

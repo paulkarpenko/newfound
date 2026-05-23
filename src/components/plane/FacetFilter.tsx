@@ -11,6 +11,7 @@ const TYPE_LABEL: Record<AnnotationType, string> = {
   media: 'media',
   question: 'question',
   tracker: 'tracker',
+  founding: 'founding',
 };
 
 /**

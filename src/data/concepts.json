@@ -1,0 +1,351 @@
+{
+  "metadata": {
+    "voice": "Feynman-style explanation in modern English, written as the founders might explain it today — conversational, concrete, focused on the why behind the what.",
+    "lookupRule": "Concepts are matched by (clauseId, trigger phrase substring). The longest trigger that the selection contains, on a concept attached to the clause the selection is in, wins. A clause's default concept is matched when no specific trigger fits."
+  },
+  "concepts": [
+    {
+      "id": "preamble-we-the-people",
+      "clauseId": "preamble-cl-1",
+      "triggers": ["We the People", "the People"],
+      "title": "Why we begin with 'We the People'",
+      "explanation": "Listen carefully to who is doing the speaking here. Every constitution in human memory had been handed down — by a king, by a parliament, by a treaty between governments. This one is different. We wrote it as if the people themselves were standing in a room and saying out loud: we are forming this government. Not the colonies as colonies, not Virginia and Massachusetts as separate sovereigns — the people, taken together, as a single source of authority. That sentence is the whole revolution in three words. Everything that follows draws its power from that act of speech."
+    },
+    {
+      "id": "preamble-more-perfect-union",
+      "clauseId": "preamble-cl-1",
+      "triggers": ["more perfect Union", "perfect Union"],
+      "title": "'More perfect' — not a boast, a confession",
+      "explanation": "'More perfect' sounds like bragging. It isn't. We are admitting, in our opening sentence, that the Articles of Confederation we wrote during the war did not work. The states bickered, the treasury was empty, foreign powers played us against each other. So we are not claiming we have built a perfect Union — we are building a better one than the one we already tried. The country is a thing under construction; this is the next iteration, not the final one. Every generation since has the same charge."
+    },
+    {
+      "id": "preamble-general-welfare",
+      "clauseId": "preamble-cl-1",
+      "triggers": ["general Welfare", "common defence"],
+      "title": "What we mean by 'general Welfare'",
+      "explanation": "Notice the word 'general.' We did not say 'welfare,' which could be anything. We said general — the welfare of the whole country, not particular favors for particular states or particular friends. We list specific purposes (Justice, Tranquility, Defence, Welfare, Liberty) to remind future readers what this government exists for. If a federal action does not serve one of these ends, it doesn't belong here. The phrase is a target, not a blank check."
+    },
+    {
+      "id": "vesting-legislative",
+      "clauseId": "art-1-sec-1",
+      "triggers": ["All legislative Powers herein granted", "legislative Powers", "vested in a Congress"],
+      "title": "Why Congress comes first",
+      "explanation": "Notice we begin with the legislature, not the President. In any free government, the power to make laws is the most important power, because law is what binds everyone — including the executive who would enforce it. We put Congress in Article I because that is where the people's most direct voice lives. The phrase 'herein granted' is the key check: Congress has the powers we list, not all powers imaginable. If a power isn't in this document, Congress doesn't have it. We didn't want to recreate Parliament's open-ended authority."
+    },
+    {
+      "id": "house-of-reps",
+      "clauseId": "art-1-sec-2",
+      "triggers": ["House of Representatives", "every second Year", "chosen", "by the People"],
+      "title": "Why the House is elected directly, and often",
+      "explanation": "We wanted one chamber that lives close to the people — that has to look them in the eye every two years and answer for what it did. Every two years is short enough that a representative cannot grow distant; long enough that they can actually learn the work of legislating. Notice we made the qualifications for voting whatever your own state uses for its larger legislative chamber. We weren't going to impose a uniform national franchise — but we made sure that the most numerous voters in your state choose your federal representative too. The House is the chamber where the heartbeat of the country is supposed to register first."
+    },
+    {
+      "id": "senate",
+      "clauseId": "art-1-sec-3",
+      "triggers": ["Senate", "two Senators", "six Years"],
+      "title": "Why the Senate is small, slow, and equal",
+      "explanation": "If the House is the country's pulse, the Senate is its patience. Six-year staggered terms mean two-thirds of the Senate is always still in office during any election season; it cannot be swept clean by a single year of popular anger. Two senators from each state, regardless of population, was the compromise that made the union possible — the small states would never have ratified otherwise. We knew this gives outsized weight to less-populous states. We made the trade deliberately. The Senate is supposed to be the chamber that takes the long view, that cools heated questions, that says no when no is the right answer."
+    },
+    {
+      "id": "elections-clause",
+      "clauseId": "art-1-sec-4",
+      "triggers": ["Times, Places and Manner", "holding Elections", "make or alter such Regulations"],
+      "title": "Who runs federal elections",
+      "explanation": "The states run their own elections. That was the default. We kept it — local knowledge, local logistics, local administration. But we gave Congress the power to step in and rewrite the rules if needed. Why? Because we could imagine a state refusing to hold federal elections, or rigging them, or scheduling them at impossible times. A federal government that can't backstop its own election is a federal government that can be dissolved by any single faithless state. The override is a fail-safe, not a takeover."
+    },
+    {
+      "id": "presentment-veto",
+      "clauseId": "art-1-sec-7",
+      "triggers": ["Every Bill", "presented to the President", "If he approve"],
+      "title": "Why the President signs bills",
+      "explanation": "We could have made law in a single step — Congress passes, it becomes law. Instead we put a second person in the loop. The President sees every bill before it takes effect, and can object. Why bother? Because a single chamber, or even two chambers, can be carried away in a moment. The veto gives one person a structural moment to say 'wait — look at what this actually does.' But notice the override: two-thirds of both houses can pass a bill over the President's objection. The final word still belongs to Congress. The President is a brake, not a wall."
+    },
+    {
+      "id": "taxing-spending",
+      "clauseId": "art-1-sec-8-cl-1",
+      "triggers": ["To lay and collect Taxes", "lay and collect", "common Defence and general Welfare", "general Welfare"],
+      "title": "Why Congress (and only Congress) can tax",
+      "explanation": "Under the Articles of Confederation, the federal government had to ask the states for money, and the states often said no — or yes and then didn't pay. The government was paralyzed. So we put taxation here, in the first power on the list, given to the chamber elected by the people. The reason is republican: taxes have to be voted on by the people who will pay them, through representatives they chose. Note also 'uniform' — Congress cannot tax New York at one rate and Virginia at another. Federal taxation is the same for all citizens; the burden is shared because the benefit is shared."
+    },
+    {
+      "id": "commerce-clause",
+      "clauseId": "art-1-sec-8-cl-3",
+      "triggers": ["to regulate Commerce", "Commerce", "among the several States", "foreign Nations"],
+      "title": "The Commerce Clause, plainly",
+      "explanation": "Picture thirteen separate countries on one continent, each charging tariffs on the others, each making its own deals with France or Britain. That was the country under the Articles. The commerce power is our answer: one nation, one trade policy. Congress sets the rules for trade with other countries, trade among the states, and trade with the Indian nations. 'Among' was a deliberate word — not 'within' a state, but between states. The line has been fought over for two centuries because modern commerce doesn't sit politely on one side of a border. The original purpose, though, was to stop the states from strangling each other in a mercantile war."
+    },
+    {
+      "id": "declare-war",
+      "clauseId": "art-1-sec-8-cl-11",
+      "triggers": ["to declare War", "declare War"],
+      "title": "Why Congress declares war, not the President",
+      "explanation": "We had just lived through a war fought because a king decided to fight one. We were not going to do that again. The decision to commit the country's blood and treasure to a war is the gravest decision a government can make — so we put it in the hands of the body that most directly represents the people who will be sent to fight it. The President commands the army; only Congress sends it. That separation was the whole point. Modern practice has frayed the line; the text is still here."
+    },
+    {
+      "id": "armies",
+      "clauseId": "art-1-sec-8-cl-12",
+      "triggers": ["to raise and support Armies", "raise and support Armies", "two Years"],
+      "title": "The two-year leash on the army",
+      "explanation": "We feared a standing army the way you fear a fire you can't put out. So we wrote in a structural safeguard you might miss: no military appropriation can run longer than two years. Every two years, Congress has to vote again to fund the army. If a Congress ever wanted to dissolve the standing army, all it would have to do is fail to appropriate. That is the citizens' check, baked into the document — not a wish, a procedure."
+    },
+    {
+      "id": "militia-call",
+      "clauseId": "art-1-sec-8-cl-15",
+      "triggers": ["calling forth the Militia", "the Militia", "execute the Laws", "suppress Insurrections", "repel Invasions"],
+      "title": "When the Militia gets called",
+      "explanation": "The Militia is the citizen body in arms — your neighbors, organized for defense. Federalizing them is a heavy thing. So we said: it can only happen for three reasons. Execute the laws. Put down insurrection. Repel invasion. Those are the times when local capacity isn't enough and the nation itself must respond. Outside of that, the militia stays where it belongs — at home, under state command, in the hands of the people."
+    },
+    {
+      "id": "militia-org",
+      "clauseId": "art-1-sec-8-cl-16",
+      "triggers": ["to provide for organizing", "organizing, arming, and disciplining", "Appointment of the Officers", "training the Militia"],
+      "title": "How the Militia is organized",
+      "explanation": "Notice the division of labor. Congress sets the standards — how the Militia is organized, how it is armed, how it is disciplined — because uniform standards across thirteen states are necessary if the Militia is ever to function as a national force. But the states keep two things: they appoint the officers, and they train the troops. That keeps the Militia rooted in local civic life. The federal government may call it forth and set its rules, but it remains, in its bones, a citizen institution of the states."
+    },
+    {
+      "id": "necessary-and-proper",
+      "clauseId": "art-1-sec-8-cl-18",
+      "triggers": ["necessary and proper", "carrying into Execution", "necessary", "proper", "all Laws"],
+      "title": "What 'necessary and proper' actually does",
+      "explanation": "Here is what we were worried about. We listed Congress's powers — coin money, regulate commerce, raise an army. But what about all the practical things needed to actually do those? Sign contracts? Build mints? Buy uniforms? If we hadn't listed every step, a clever opponent could cripple the government by saying 'you didn't authorize that specific act.' This clause is our answer: whatever the Constitution lets Congress do, Congress also gets to do the reasonable things needed to make it happen. But notice the word 'proper.' The means have to fit a power we actually gave Congress, and the power has to be one we actually gave. Not a blank check — a license to act sensibly within bounds."
+    },
+    {
+      "id": "habeas-corpus",
+      "clauseId": "art-1-sec-9",
+      "triggers": ["Habeas Corpus", "Privilege of the Writ"],
+      "title": "What habeas corpus actually is",
+      "explanation": "The writ of habeas corpus — Latin for 'you shall have the body' — is the oldest tool in the English liberty toolkit. If the government locks you up, you (or anyone for you) can demand that a judge bring you into court and force the jailer to explain why. The judge then decides whether the imprisonment is lawful. Without habeas, the government can disappear people. That is why we put it here, as a thing the government may not take away — except in the narrowest circumstance: actual rebellion or actual invasion when public safety genuinely requires it. We did not make it easy to suspend on purpose."
+    },
+    {
+      "id": "ex-post-facto-attainder",
+      "clauseId": "art-1-sec-9",
+      "triggers": ["Bill of Attainder", "ex post facto Law"],
+      "title": "No retroactive punishment, no legislative trials",
+      "explanation": "Two ancient abuses we wanted to abolish. A bill of attainder was a law passed by Parliament declaring a specific person guilty of treason — no trial, no jury, just legislative verdict and death. An ex post facto law makes something a crime after you did it, or makes the punishment harsher after the fact. Both treat individual citizens as targets of legislation rather than subjects of law. We forbade both, against Congress and against the states, because a free people cannot be governed by retroactive surprises or by political verdicts dressed up as statutes."
+    },
+    {
+      "id": "appropriations",
+      "clauseId": "art-1-sec-9",
+      "triggers": ["No Money shall be drawn from the Treasury", "Appropriations made by Law", "Statement and Account"],
+      "title": "Why the executive can't spend without Congress",
+      "explanation": "This is the power of the purse, in one sentence. No money leaves the Treasury unless Congress has passed a law authorizing it. The President can't decide to fund a project Congress didn't approve. The President can't refuse to spend money Congress did approve and use that as leverage. Congress controls what is paid for, and the public gets a regular accounting of what was received and spent. This is how a republic stops one person from buying loyalty with public money — and how citizens can tell, at any time, where their taxes have gone."
+    },
+    {
+      "id": "executive-power",
+      "clauseId": "art-2-sec-1",
+      "triggers": ["The executive Power shall be vested", "executive Power", "President of the United States of America"],
+      "title": "Why one President",
+      "explanation": "We argued about this. Some wanted a council, some wanted a triumvirate. We settled on one. The reason was responsibility: when something goes wrong in the executive branch, you should know exactly whose door to knock on. With a council, blame splits and dissolves. With one person, accountability is concentrated — and so is the temptation to grasp for too much. So we surrounded the office with checks: a fixed term, impeachment, congressional control of money and law, Senate concurrence on the consequential acts. One executive, fenced in."
+    },
+    {
+      "id": "electors",
+      "clauseId": "art-2-sec-1",
+      "triggers": ["Each State shall appoint", "Number of Electors"],
+      "title": "The Electoral College, why we built it",
+      "explanation": "We could not agree on who should choose the President. Direct popular election worried us because — in the era before national newspapers and instant communication — most voters in Georgia wouldn't really know the candidates from Massachusetts. Letting Congress choose risked making the President a puppet of the legislature. So we invented a compromise: each state picks electors, in whatever manner its legislature directs, who then choose the President. The number is your House seats plus your Senate seats. The system has been criticized for nearly its whole life. It is here because in 1787 we could not get a majority to ratify without it."
+    },
+    {
+      "id": "commander-in-chief",
+      "clauseId": "art-2-sec-2",
+      "triggers": ["Commander in Chief", "Army and Navy"],
+      "title": "What 'Commander in Chief' meant to us",
+      "explanation": "In a country where Congress declares war and Congress funds the army, the President's role is to direct the forces once they exist and once the war is on. Commander in Chief is a job title, not a policy power. The President does not decide whether to go to war (Congress does), does not decide the size of the army (Congress does), does not decide the budget (Congress does). The President commands. That separation kept us up at night when we wrote it, and it should still."
+    },
+    {
+      "id": "treaties",
+      "clauseId": "art-2-sec-2",
+      "triggers": ["to make Treaties", "Advice and Consent", "two thirds of the Senators"],
+      "title": "Why treaties need the Senate",
+      "explanation": "A treaty binds the country indefinitely. We were not going to let one person bind the country indefinitely. So we split the power: the President negotiates (because a single negotiator can act with speed, secrecy, unity), and the Senate consents — with a two-thirds supermajority, which is one of the steepest thresholds in the entire document. If you can't get two-thirds of the Senate to agree, the treaty doesn't bind us. That is on purpose. We meant our international commitments to be hard to make, hard to break."
+    },
+    {
+      "id": "appointments",
+      "clauseId": "art-2-sec-2",
+      "triggers": ["he shall nominate", "Advice and Consent of the Senate, shall appoint", "Officers of the United States"],
+      "title": "Why nominations are split between branches",
+      "explanation": "The President picks because one person can choose with judgment a body cannot match. The Senate confirms because one person, unchecked, will eventually appoint friends, debtors, and flatterers. Splitting the power forces both branches to be visible. The President owns the failures of confirmed nominees; the Senate owns the failures of obstruction. Both answer to the public for what they did with this power."
+    },
+    {
+      "id": "take-care",
+      "clauseId": "art-2-sec-3",
+      "triggers": ["take Care that the Laws be faithfully executed", "faithfully executed", "take Care"],
+      "title": "Take Care — the President's central duty",
+      "explanation": "Read this sentence carefully. The President does not get to pick which laws to enforce. The President does not get to suspend a law because they disagree with it. The President does not get to enforce a law against political enemies and ignore it for friends. The duty is to take care that the laws — every law Congress has enacted — be faithfully executed. 'Faithfully' is doing real work in that sentence. The President is the executor of laws, not their author and not their judge."
+    },
+    {
+      "id": "impeachment",
+      "clauseId": "art-2-sec-4",
+      "triggers": ["Impeachment", "high Crimes and Misdemeanors", "Treason, Bribery"],
+      "title": "What impeachment is, and isn't",
+      "explanation": "Impeachment is not a criminal trial. It does not put anyone in prison. All it does is remove an officer from federal office and disqualify them from holding another. We put it here because we knew that someday a President or judge or other officer would commit acts so destructive to the republic that elections couldn't wait. Treason and bribery are clear. 'High crimes and misdemeanors' was deliberately broad — abuses of the office itself, not just statutory crimes. The House accuses, the Senate tries, two-thirds convicts. We made it hard on purpose. We made it possible on purpose."
+    },
+    {
+      "id": "judicial-power",
+      "clauseId": "art-3-sec-1",
+      "triggers": ["The judicial Power of the United States", "judicial Power", "one supreme Court", "during good Behaviour"],
+      "title": "Why federal judges have life tenure",
+      "explanation": "A judge who is afraid of losing her seat will not rule against the people who can take it away from her. The whole point of an independent judiciary is to be able to say no to the political branches when they overreach. So we gave federal judges office 'during good Behaviour' — meaning until they retire, die, or are impeached for misconduct — and we forbade Congress from lowering their salaries while they sit. Both protections exist for one reason: to make a judge afraid of nothing except being wrong about the law."
+    },
+    {
+      "id": "jury-trial-criminal",
+      "clauseId": "art-3-sec-2",
+      "triggers": ["The Trial of all Crimes", "shall be by Jury", "Jury"],
+      "title": "Trial by jury — why it's structural, not just procedural",
+      "explanation": "Trial by jury is not a courtesy the government extends to the accused. It is a structural check on the government itself. A jury is twelve ordinary citizens, drawn from the community where the crime allegedly happened, who must agree before the government can punish you. They are not employees of the state. They cannot be fired for an inconvenient verdict. They are, in that moment, the people themselves standing between the accused and the prosecutor. We put it in Article III not as a kindness but as architecture."
+    },
+    {
+      "id": "treason",
+      "clauseId": "art-3-sec-3",
+      "triggers": ["Treason against the United States", "Treason", "two Witnesses"],
+      "title": "Why we narrowed treason",
+      "explanation": "In England, treason had been stretched to cover almost anything inconvenient to the crown — speaking ill of the king, refusing to take an oath, owning the wrong book. We had watched that abuse used to silence people for generations. So we wrote the definition right into the Constitution and locked it down: treason consists only in levying war against the United States, or in adhering to their enemies. Only those two things. And conviction requires either two witnesses to the same overt act or a confession in open court. We made treason hard to prove on purpose, because the charge had been the most dangerous weapon a tyrannical government had."
+    },
+    {
+      "id": "republican-form",
+      "clauseId": "art-4-sec-4",
+      "triggers": ["a Republican Form of Government", "Republican Form", "guarantee"],
+      "title": "The Guarantee Clause",
+      "explanation": "A federation of self-governing republics cannot survive if some of its members stop being republics. If a state decided to install a king, the rest of the union would have to live next door to a monarchy. So we promised — collectively, as the United States — that we would guarantee each state a republican form of government. That means representative, accountable to the people, periodic elections. The federal government does not run the states' politics. But it does stand behind the basic republican character of each one. The clause is rarely litigated and structurally fundamental."
+    },
+    {
+      "id": "amendment-process",
+      "clauseId": "art-5-cl-1",
+      "triggers": ["propose Amendments", "Amendments", "Convention for proposing", "two thirds of both Houses", "three fourths"],
+      "title": "How and why we made amendment hard",
+      "explanation": "We were sure this document was imperfect — we said so in the Preamble. So we built in a process for fixing it. But we made the process hard. Two-thirds of both houses of Congress (or two-thirds of the states' legislatures calling a convention) to propose; three-fourths of the states to ratify. That much consensus across that much of the country is rare. We meant it to be. A constitution that can be rewritten by a simple majority is not a constitution — it's a statute. The high bar is what makes the rules above ordinary politics actually stay above ordinary politics."
+    },
+    {
+      "id": "supremacy-clause",
+      "clauseId": "art-6-cl-1",
+      "triggers": ["supreme Law of the Land", "shall be the supreme Law", "shall be bound thereby"],
+      "title": "Why federal law wins when it collides with state law",
+      "explanation": "A federation cannot work if its component parts can ignore its laws. If Virginia could declare a federal statute inoperative within its borders, the federal government would be a polite suggestion. So we made the rule explicit: this Constitution, federal laws made under it, and federal treaties are the supreme law of the land, and every judge in every state is bound by them — anything in state law to the contrary notwithstanding. State judges, not just federal judges, must enforce federal law over their own state's law when the two conflict."
+    },
+    {
+      "id": "establishment-clause",
+      "clauseId": "amend-1-cl-1",
+      "triggers": ["an establishment of religion", "establishment of religion"],
+      "title": "What 'no establishment' means",
+      "explanation": "We came from a country with an official church — the Church of England — where dissenters were punished, taxed for a faith they didn't practice, sometimes hanged. Several of us had ancestors who fled exactly that. So we wrote that Congress shall make no law 'respecting an establishment of religion.' No state church. No federal preference. No public money flowing to support one faith's institutions. Notice the word 'respecting' — even leaning in that direction is forbidden. The point is not that religion is bad. The point is that the moment government picks a side in a religious question, the losing sides become second-class."
+    },
+    {
+      "id": "free-exercise",
+      "clauseId": "amend-1-cl-1",
+      "triggers": ["the free exercise thereof", "free exercise"],
+      "title": "Free exercise — believing and doing",
+      "explanation": "Freedom of religion is not only the freedom to believe whatever you want in private. Belief that costs the state nothing isn't really a freedom. The harder question is whether you can act on belief — gather, worship, raise your children in your faith, refuse work on the sabbath, wear what your faith requires. The clause protects exercise — the doing, not just the thinking. The hard cases come when religious practice collides with a generally applicable law. The line moves with the cases, but the principle stays here: the government must justify burdens on religious practice, not the other way around."
+    },
+    {
+      "id": "freedom-of-speech",
+      "clauseId": "amend-1-cl-1",
+      "triggers": ["the freedom of speech", "freedom of speech", "abridging"],
+      "title": "Why freedom of speech is first",
+      "explanation": "Self-government cannot work if the government can punish you for criticizing it. The whole premise of a republic is that the people can argue, organize, persuade, change their minds, change each other's minds — and then vote. Cut off that flow of speech and the votes mean nothing. So we put it here, near the top of the rights we listed: Congress shall make no law abridging the freedom of speech. Not even speech we hate. Especially not speech we hate. The cure for bad speech is more speech, not silence."
+    },
+    {
+      "id": "press",
+      "clauseId": "amend-1-cl-1",
+      "triggers": ["or of the press", "the press"],
+      "title": "Why we named the press specifically",
+      "explanation": "A free press is a separate thing from free speech. Speech is what you say with your mouth. The press is the institution that gathers information, asks questions of power, and publishes what it learns to the rest of the country. Without a press, citizens cannot know what their government is doing. We had just spent a war reading pamphlets that argued for the revolution; we knew firsthand what a free press could do. So we named it. The protection is for the function, not the technology — whether the press is a printer in 1791 or an investigative website today."
+    },
+    {
+      "id": "assembly-petition",
+      "clauseId": "amend-1-cl-1",
+      "triggers": ["peaceably to assemble", "to petition", "redress of grievances"],
+      "title": "Why we protected gathering and petitioning",
+      "explanation": "Speech alone is not enough. You also have to be able to gather with other people — peacefully — and you have to be able to deliver a grievance to the government and have it heard. A right to speak alone in your kitchen is not a political right. A right to march to the courthouse with two hundred neighbors and present a complaint is. Notice the word 'peaceably' — the right does not cover violence. But the right to gather, to organize, to ask the government to fix what is wrong: that is at the heart of what self-government means."
+    },
+    {
+      "id": "second-amendment",
+      "clauseId": "amend-2-cl-1",
+      "triggers": ["A well regulated Militia", "well regulated Militia", "to keep and bear Arms", "shall not be infringed"],
+      "title": "The Second Amendment — what we were arguing about",
+      "explanation": "There were two ideas wrapped up here, and people still argue about which one is dominant. One is collective: we feared a standing federal army, and we wanted the citizens organized into state militias to remain armed as a check against that army. The other is individual: people own arms for their own defense, and the new federal government has no power to take that away. We wrote a single sentence that gestures at both — the preamble about the militia, the operative clause about the right of the people. Two centuries of jurisprudence have moved the center of gravity. The text is what we wrote; what we meant by it is still being argued."
+    },
+    {
+      "id": "searches-seizures",
+      "clauseId": "amend-4-cl-1",
+      "triggers": ["unreasonable searches and seizures", "shall not be violated", "probable cause", "Warrants"],
+      "title": "Why we wrote the Fourth Amendment",
+      "explanation": "We had lived under writs of assistance — general warrants the British issued, blank, that let an officer search any house at any time on no particular suspicion. They were the most hated tool of colonial rule. So we wrote two things into this one amendment. First, the people are secure against unreasonable government searches — the government has to have a reason. Second, when warrants do issue, they have to name the place to be searched and the things to be seized. No more blank warrants. No more 'come in and look around for whatever you find.'"
+    },
+    {
+      "id": "due-process",
+      "clauseId": "amend-5-cl-1",
+      "triggers": ["due process of law", "deprived of life, liberty, or property"],
+      "title": "What 'due process' is supposed to do",
+      "explanation": "The government can take things from you — your liberty, your property, in extreme cases your life. We did not pretend otherwise. What we said was: you have to be given a fair process first. Notice, before the deprivation. Hearing, after, the chance to be heard. The standards have grown over the centuries, but the principle is unchanged: government action that takes from a person must go through procedures that allow them to contest it. 'Due' means owed — the process is something the person is owed, not a courtesy the government grants."
+    },
+    {
+      "id": "self-incrimination",
+      "clauseId": "amend-5-cl-1",
+      "triggers": ["a witness against himself", "twice put in jeopardy"],
+      "title": "Why you can refuse to testify against yourself",
+      "explanation": "In English and continental practice, the state could force a defendant to testify under oath about their own alleged crime — often under torture. We considered this a fundamental abuse. So we wrote in two safeguards: you can't be tried twice for the same offense (double jeopardy), and you cannot be compelled to be a witness against yourself. The state has to make its own case. It cannot extract a confession from you and then use that confession to convict you. The burden of proof stays where it belongs: on the accuser."
+    },
+    {
+      "id": "eminent-domain",
+      "clauseId": "amend-5-cl-1",
+      "triggers": ["private property be taken for public use", "just compensation"],
+      "title": "Eminent domain — what 'just compensation' means",
+      "explanation": "Yes, the government can take your property to build a road or a fort. We didn't pretend it couldn't. What we did was constrain how. Two requirements. One: the taking has to be for public use — not to enrich someone else, but for something the public will share. Two: just compensation. The government has to pay you what the property is worth, in money. You are not asked to subsidize the public's benefit out of your own pocket. The burden is shared because the benefit is shared."
+    },
+    {
+      "id": "right-to-counsel",
+      "clauseId": "amend-6-cl-1",
+      "triggers": ["the Assistance of Counsel", "speedy and public trial", "impartial jury"],
+      "title": "The rights of the accused",
+      "explanation": "Notice we did not say the state cannot prosecute. We said: when it does, here is what the accused gets. A speedy trial, so you don't rot in jail awaiting one. A public trial, so the proceeding is visible to the community. An impartial jury from the place the crime was committed. To be told what you are charged with. To confront the witnesses against you face-to-face. To compel witnesses in your favor. And — the most consequential in modern practice — the assistance of counsel. The state has lawyers; you must have lawyers too. Without counsel, the other rights are paperwork."
+    },
+    {
+      "id": "cruel-and-unusual",
+      "clauseId": "amend-8-cl-1",
+      "triggers": ["cruel and unusual punishments", "Excessive bail", "excessive fines"],
+      "title": "Why we wrote the Eighth Amendment",
+      "explanation": "The state can punish people who break the law. We accepted that. What we did not accept was the use of punishment to terrify, to humiliate, to torture. England had a long memory of punishments — branding, mutilation, the rack — designed less to enforce law than to break the human being subjected to them. We forbade that. We also forbade excessive bail and fines, because if the government can ruin you by setting bail at ten thousand pounds, the right to bail is meaningless. The word 'cruel' is doing work that has been interpreted differently in every century since."
+    },
+    {
+      "id": "unenumerated-rights",
+      "clauseId": "amend-9-cl-1",
+      "triggers": ["enumeration in the Constitution, of certain rights", "shall not be construed to deny", "others retained by the people"],
+      "title": "The Ninth Amendment — why we wrote it",
+      "explanation": "Hamilton had warned that listing rights at all was dangerous: someone in the future would point at the list and say 'see, you only have these.' We listed rights anyway, because the Anti-Federalists demanded it. But we added this amendment as a fence around the inference. Just because we wrote down some rights does not mean we denied or disparaged the ones we didn't write down. The people retain rights this document does not enumerate. The clause is rarely used by courts, but it is a textual reminder that the Bill of Rights is a floor, not a ceiling."
+    },
+    {
+      "id": "reserved-powers",
+      "clauseId": "amend-10-cl-1",
+      "triggers": ["powers not delegated to the United States", "reserved to the States", "or to the people"],
+      "title": "The Tenth Amendment — the structural answer",
+      "explanation": "If the federal government has only the powers we delegated to it, then everything else stays where it was before — with the states, or with the people. This amendment doesn't grant a power; it states a structural truth. The federal government is a government of enumerated powers. The list we gave Congress in Article I §8 is the list — not the floor, the whole thing. Whatever isn't on it belongs to the states or to the people. The clause is part of how the federal balance was supposed to work. How it actually works has been negotiated, case by case, ever since."
+    },
+    {
+      "id": "abolition",
+      "clauseId": "amend-13-cl-1",
+      "triggers": ["Neither slavery nor involuntary servitude", "slavery"],
+      "title": "The Thirteenth Amendment — what it actually did",
+      "explanation": "We who wrote the original Constitution failed on this — we accommodated slavery, we let it grow, the document held it inside itself like an infection. It took a civil war and 600,000 dead Americans to write this amendment. Notice the structure. It is not addressed to the government — it is addressed to the country itself. Slavery and involuntary servitude shall not exist within the United States. Period. Anywhere subject to American jurisdiction. The exception, for criminal punishment, has had consequences we are still living with. But the abolition is total, and it was the first time the Constitution was used to grant freedom rather than to qualify it."
+    },
+    {
+      "id": "citizenship-clause",
+      "clauseId": "amend-14-cl-1",
+      "triggers": ["All persons born or naturalized", "subject to the jurisdiction thereof", "citizens of the United States"],
+      "title": "Birthright citizenship, as written",
+      "explanation": "Before this amendment, who was a citizen was confused — the Dred Scott decision had said Black people, free or enslaved, could not be citizens. The 39th Congress wrote this sentence to settle it forever. If you are born in the United States, and you are subject to its jurisdiction (meaning, not a foreign diplomat's child), you are a citizen. So is anyone naturalized through the process. Citizenship is not a gift the government can grant or withdraw — it attaches at birth, automatically, by virtue of where you were born and the country's authority over you."
+    },
+    {
+      "id": "due-process-14a",
+      "clauseId": "amend-14-cl-1",
+      "triggers": ["nor shall any State deprive any person", "without due process of law"],
+      "title": "Why the Fourteenth Amendment repeats due process",
+      "explanation": "The Fifth Amendment bound the federal government. The Fourteenth Amendment binds the states. Same words, different target. After the Civil War, we discovered that protecting people from federal abuse was not enough — states could still strip people of liberty and property without fair process. So we wrote it again, addressed to the states this time. The clause has become the textual root for much of modern constitutional liberty jurisprudence, including the incorporation of most of the Bill of Rights against state governments."
+    },
+    {
+      "id": "equal-protection",
+      "clauseId": "amend-14-cl-1",
+      "triggers": ["the equal protection of the laws", "equal protection"],
+      "title": "Equal protection — what we promised",
+      "explanation": "A government that applies its laws unequally is not really applying laws at all — it is applying favors and punishments. We had just lived through a regime that did exactly that, by race. So we wrote this guarantee: no state shall deny any person, within its jurisdiction, the equal protection of the laws. Notice 'any person' — not just citizens. The clause has been the textual root of every major equal-rights case in American history, from school desegregation forward. We meant the words. The country has been learning to live up to them ever since."
+    }
+  ]
+}

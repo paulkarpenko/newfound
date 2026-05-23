@@ -1,23 +1,44 @@
+import { findConcept } from '@/lib/concepts';
+import { getClause } from '@/lib/dataAccess';
 import { useNewfound } from '@/state/useNewfound';
 
 /**
- * Floating "annotate" pill that appears next to a text selection.
- * Lives in screen space (outside the World transform) — clicking it opens
- * the Composer dialog over the selection.
+ * Floating selection toolbar that appears next to a text selection. Two
+ * actions: "annotate" opens the composer (a new annotation); "explain"
+ * opens a transient Feynman-style explanation panel.
  */
 export default function AnnotatePill() {
   const selection = useNewfound((s) => s.composerSelection);
   const composerOpen = useNewfound((s) => s.composerOpen);
   const openComposer = useNewfound((s) => s.openComposer);
+  const openExplanation = useNewfound((s) => s.openExplanation);
   const cancel = useNewfound((s) => s.cancelComposing);
 
-  // Hide once the composer is open (the composer takes over the spot).
   if (!selection || composerOpen) return null;
 
-  // Position the pill at the bottom-right of the selection, with a small
-  // offset so it doesn't sit on the text.
   const left = selection.screenX + 6;
   const top = selection.screenY + 6;
+
+  const onExplain = () => {
+    // If a static concept matches, hand it to the panel — fast, free, offline.
+    // Otherwise open the panel with no conceptId; it falls back to streaming
+    // a live Claude explanation of the selected phrase. Either way, the click
+    // always does something.
+    const concept = findConcept(selection.clauseId, selection.exact);
+    const clause = getClause(selection.clauseId);
+    const side: 'left' | 'right' =
+      clause && selection.worldX - clause.world.x < clause.world.width / 2
+        ? 'left'
+        : 'right';
+    openExplanation({
+      clauseId: selection.clauseId,
+      exact: selection.exact,
+      worldX: selection.worldX,
+      worldY: selection.worldY,
+      side,
+      conceptId: concept?.id,
+    });
+  };
 
   return (
     <div
@@ -37,34 +58,27 @@ export default function AnnotatePill() {
         gap: 2,
       }}
       role="toolbar"
-      aria-label="Annotate selection"
+      aria-label="Annotate or explain selection"
     >
-      <button
-        type="button"
+      <PillButton
         onClick={openComposer}
-        onMouseDown={(e) => e.preventDefault()} // don't drop selection
-        style={{
-          fontFamily: 'Inter, ui-sans-serif, system-ui, sans-serif',
-          textTransform: 'uppercase',
-          letterSpacing: '0.14em',
-          fontSize: 10,
-          fontWeight: 600,
-          color: 'var(--nf-ink)',
-          padding: '4px 10px',
-          borderRadius: 999,
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 4,
-        }}
-      >
-        <span aria-hidden style={{ fontSize: 11 }}>＋</span>
-        annotate
-      </button>
+        ariaLabel="Annotate the selected text"
+        glyph="＋"
+        label="annotate"
+      />
+      <span aria-hidden style={{ width: 1, height: 16, background: 'var(--nf-rule)', margin: '0 2px' }} />
+      <PillButton
+        onClick={onExplain}
+        ariaLabel="Explain the selected text in plain language"
+        glyph="?"
+        label="explain"
+        accent
+      />
       <button
         type="button"
         onClick={cancel}
         onMouseDown={(e) => e.preventDefault()}
-        aria-label="Dismiss annotate pill"
+        aria-label="Dismiss selection toolbar"
         style={{
           fontSize: 12,
           color: 'var(--nf-ink-soft)',
@@ -75,5 +89,40 @@ export default function AnnotatePill() {
         ×
       </button>
     </div>
+  );
+}
+
+interface PillButtonProps {
+  onClick: () => void;
+  ariaLabel: string;
+  glyph: string;
+  label: string;
+  accent?: boolean;
+}
+
+function PillButton({ onClick, ariaLabel, glyph, label, accent }: PillButtonProps) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      onMouseDown={(e) => e.preventDefault()} // don't drop selection
+      aria-label={ariaLabel}
+      style={{
+        fontFamily: 'Inter, ui-sans-serif, system-ui, sans-serif',
+        textTransform: 'uppercase',
+        letterSpacing: '0.14em',
+        fontSize: 10,
+        fontWeight: 600,
+        color: accent ? 'var(--nf-focus)' : 'var(--nf-ink)',
+        padding: '4px 10px',
+        borderRadius: 999,
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: 4,
+      }}
+    >
+      <span aria-hidden style={{ fontSize: 11 }}>{glyph}</span>
+      {label}
+    </button>
   );
 }

@@ -13,6 +13,8 @@ import CorpusText from '@/components/tier2/CorpusText';
 import PanelLayer from '@/components/panels/PanelLayer';
 import Composer from '@/components/composer/Composer';
 import AnnotatePill from '@/components/composer/AnnotatePill';
+import ExplanationPanel from '@/components/explanation/ExplanationPanel';
+import ClauseChatPanel from '@/components/explanation/ClauseChatPanel';
 import AnnotationDetailModal from '@/components/detail/AnnotationDetailModal';
 import ClauseOutline from '@/components/a11y/ClauseOutline';
 import { useNewfound } from '@/state/useNewfound';
@@ -111,6 +113,14 @@ export default function Reader() {
 
         {/* Panels & leader lines render at every tier (collapsed to dots in T1). */}
         <PanelLayer />
+
+        {/* Transient explanation popover lives in world space so it follows
+            pan/zoom and connects to its text anchor with a leader line. */}
+        <ExplanationPanel />
+
+        {/* "Why this exists" chat panel — tethered to a clause title by a
+            leader line, draggable, lives in world space alongside the text. */}
+        <ClauseChatPanel />
       </World>
 
       {/* Screen-space surfaces that should not scale with the plane. */}

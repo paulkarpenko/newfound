@@ -5,6 +5,7 @@ import { useMerged } from '@/lib/dataAccess';
 import { useNewfound } from '@/state/useNewfound';
 import ClausePulse from '@/components/primitives/ClausePulse';
 import SpanInline from './SpanInline';
+import ClauseExplainButton from '@/components/explanation/ClauseExplainButton';
 
 interface ClauseBlockProps {
   clause: Clause;
@@ -124,32 +125,47 @@ export default function ClauseBlock({ clause }: ClauseBlockProps) {
         cursor: selectable ? 'text' : 'grab',
       }}
     >
-      <header style={{ marginBottom: 8 }}>
-        <p
-          style={{
-            fontFamily: 'Inter, ui-sans-serif, system-ui, sans-serif',
-            textTransform: 'uppercase',
-            letterSpacing: '0.14em',
-            fontSize: 10,
-            fontWeight: 500,
-            color: 'var(--nf-ink-soft)',
-          }}
-        >
-          {clause.citation}
-        </p>
-        {clause.heading && (
-          <h2
+      <header
+        style={{
+          marginBottom: 14,
+          paddingBottom: 10,
+          borderBottom: '1px solid var(--nf-rule-soft)',
+          display: 'flex',
+          alignItems: 'flex-start',
+          gap: 12,
+        }}
+      >
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <p
             style={{
-              fontFamily: 'Source Serif 4, serif',
-              fontSize: 16,
-              fontStyle: 'italic',
-              color: 'var(--nf-ink)',
-              margin: '2px 0 0',
+              fontFamily: 'Inter, ui-sans-serif, system-ui, sans-serif',
+              textTransform: 'uppercase',
+              letterSpacing: '0.18em',
+              fontSize: 11,
+              fontWeight: 600,
+              color: 'var(--nf-focus)',
             }}
           >
-            {clause.heading}
-          </h2>
-        )}
+            {clause.citation}
+          </p>
+          {clause.heading && (
+            <h2
+              style={{
+                fontFamily: 'Source Serif 4, serif',
+                fontSize: 26,
+                fontWeight: 600,
+                fontStyle: 'normal',
+                color: 'var(--nf-ink)',
+                margin: '4px 0 0',
+                lineHeight: 1.15,
+                letterSpacing: '-0.005em',
+              }}
+            >
+              {clause.heading}
+            </h2>
+          )}
+        </div>
+        <ClauseExplainButton clauseId={clause.id} />
       </header>
       <p
         style={{

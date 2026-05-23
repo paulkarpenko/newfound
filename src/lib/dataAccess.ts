@@ -3,6 +3,7 @@ import constitutionData from '@/data/constitution.json';
 import spansData from '@/data/spans.json';
 import annotationsData from '@/data/annotations.json';
 import trackerData from '@/data/tracker.json';
+import federalistData from '@/data/federalist.json';
 import type {
   Annotation,
   Clause,
@@ -60,6 +61,30 @@ function trackerActionUrl(base: string, actionGroup: string): string {
   return `${base}#:~:text=${encodeURIComponent(phrase)}`;
 }
 
+// ---- Federalist Papers --------------------------------------------------
+
+interface FederalistPaper {
+  num: number;
+  author: 'Hamilton' | 'Madison' | 'Jay' | string;
+  title: string;
+  era: number;
+}
+interface FederalistAnnotation {
+  paper: number;
+  clauseId: string;
+  quote: { exact: string; prefix?: string; suffix?: string };
+  body: string;
+}
+interface FederalistFile {
+  metadata: { source: string; publishedRange: string; asOf: string; urlPattern: string };
+  papers: FederalistPaper[];
+  annotations: FederalistAnnotation[];
+}
+
+function federalistUrl(pattern: string, num: number): string {
+  return pattern.replace('{NN}', num.toString().padStart(2, '0'));
+}
+
 // ---- Static foundations (the corpus does not change at runtime) ---------
 
 const SECTIONS = (constitutionData as { sections: Section[] }).sections;
@@ -67,6 +92,7 @@ const RAW_CLAUSES = (constitutionData as { clauses: Omit<Clause, 'world'>[] }).c
 const SEED_SPANS = spansData as Span[];
 const SEED_ANNOTATIONS = annotationsData as Annotation[];
 const TRACKER = trackerData as TrackerFile;
+const FEDERALIST = federalistData as FederalistFile;
 
 const LAYOUT = layoutCorpus(
   SECTIONS,
@@ -170,9 +196,114 @@ function expandTracker(): { spans: Span[]; annotations: Annotation[] } {
   return { spans: outSpans, annotations: outAnnotations };
 }
 
+/**
+ * Expand the Federalist Papers crosswalk into spans + annotations.
+ * Same structural pattern as the tracker layer — provisions become spans
+ * (reusing any equivalent seed/tracker span), and each paper × clause
+ * mapping becomes one annotation of type 'founding'.
+ */
+function expandFederalist(extraSpans: Span[]): { spans: Span[]; annotations: Annotation[] } {
+  // Combine every span already known (seed + tracker) so we can reuse them
+  // wherever the Federalist mapping points to identical text.
+  const existingByClause = new Map<string, Span[]>();
+  for (const s of [...SEED_SPANS, ...extraSpans]) {
+    const arr = existingByClause.get(s.clauseId) ?? [];
+    arr.push(s);
+    existingByClause.set(s.clauseId, arr);
+  }
+
+  const paperByNum = new Map(FEDERALIST.papers.map((p) => [p.num, p]));
+
+  const outSpans: Span[] = [];
+  const outAnnotations: Annotation[] = [];
+  // Local cache of synthetic spans we've already created in this pass —
+  // multiple paper mappings can land on the same (clauseId, quote) pair.
+  const syntheticByKey = new Map<string, Span>();
+
+  for (const m of FEDERALIST.annotations) {
+    const paper = paperByNum.get(m.paper);
+    if (!paper) {
+      // eslint-disable-next-line no-console
+      console.warn(`[federalist] unknown paper ${m.paper}`);
+      continue;
+    }
+    const clause = CLAUSE_INDEX.get(m.clauseId);
+    if (!clause) {
+      // eslint-disable-next-line no-console
+      console.warn(`[federalist] paper ${m.paper}: unknown clauseId ${m.clauseId}`);
+      continue;
+    }
+    const selector = [
+      { type: 'TextQuoteSelector' as const, exact: m.quote.exact, prefix: m.quote.prefix, suffix: m.quote.suffix },
+    ];
+    const resolved = resolveAnchor(selector, clause.text);
+    if (!resolved) {
+      // eslint-disable-next-line no-console
+      console.warn(`[federalist] paper ${m.paper}: could not anchor "${m.quote.exact}" in ${m.clauseId}`);
+      continue;
+    }
+
+    // Reuse an existing span when one covers the same range.
+    const existing = (existingByClause.get(m.clauseId) ?? []).find((sp) => {
+      const r = resolveAnchor(sp.selector, clause.text);
+      return r && r.start === resolved.start && r.end === resolved.end;
+    });
+    let span: Span;
+    if (existing) {
+      span = existing;
+    } else {
+      const key = `${m.clauseId}|${resolved.start}|${resolved.end}`;
+      const cached = syntheticByKey.get(key);
+      if (cached) {
+        span = cached;
+      } else {
+        span = {
+          id: `fed-span-${m.clauseId}-${resolved.start}-${resolved.end}`,
+          clauseId: m.clauseId,
+          selector,
+          annotationIds: [],
+        };
+        syntheticByKey.set(key, span);
+        outSpans.push(span);
+      }
+    }
+
+    const annoId = `federalist-${m.paper}--${span.id}`;
+    const annotation: Annotation = {
+      id: annoId,
+      spanId: span.id,
+      type: 'founding',
+      contributor: {
+        name: `Federalist No. ${m.paper} (${paper.author})`,
+        descriptor: paper.title,
+      },
+      era: paper.era,
+      body: m.body,
+      media: {
+        kind: 'link',
+        src: federalistUrl(FEDERALIST.metadata.urlPattern, m.paper),
+        caption: `Read Federalist No. ${m.paper} at the Avalon Project (Yale Law School)`,
+      },
+    };
+    outAnnotations.push(annotation);
+    span.annotationIds.push(annoId);
+  }
+
+  return { spans: outSpans, annotations: outAnnotations };
+}
+
 const EXPANDED_TRACKER = expandTracker();
-const STATIC_SPANS = [...SEED_SPANS, ...EXPANDED_TRACKER.spans];
-const STATIC_ANNOTATIONS = [...SEED_ANNOTATIONS, ...EXPANDED_TRACKER.annotations];
+const EXPANDED_FEDERALIST = expandFederalist(EXPANDED_TRACKER.spans);
+const STATIC_SPANS = [
+  ...SEED_SPANS,
+  ...EXPANDED_TRACKER.spans,
+  ...EXPANDED_FEDERALIST.spans,
+];
+const STATIC_ANNOTATIONS = [
+  ...SEED_ANNOTATIONS,
+  ...EXPANDED_TRACKER.annotations,
+  ...EXPANDED_FEDERALIST.annotations,
+];
 
 // ---- Static getters -----------------------------------------------------
 

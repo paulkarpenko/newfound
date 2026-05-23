@@ -11,13 +11,14 @@ const TYPE_LABEL: Record<AnnotationType, string> = {
   context: 'context',
   media: 'media',
   question: 'question',
-  // `tracker` is a system-only type sourced from the legal-challenges
-  // crosswalk; readers can't author one through the composer.
+  // `tracker` and `founding` are system-only types; readers can't author one
+  // through the composer.
   tracker: 'tracker',
+  founding: 'founding',
 };
 
 const SELECTABLE_TYPES: AnnotationType[] = ANNOTATION_TYPES.filter(
-  (t) => t !== 'tracker',
+  (t) => t !== 'tracker' && t !== 'founding',
 );
 
 /**
