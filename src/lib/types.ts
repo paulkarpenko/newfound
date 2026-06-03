@@ -91,7 +91,12 @@ export interface Annotation {
   era: number;
   body: string;
   media?: AnnotationMedia;
+  /** Set on replies — references the top-level annotation being replied to. */
   parentId?: string;
+  /** Account id of the author, for user-created annotations/replies. */
+  userId?: string;
+  /** Vote counts. Absent for system/seed annotations (synthesized at runtime). */
+  votes?: { up: number; down: number };
   /** Tracker-only fields — populated when type === 'tracker'. */
   relation?: TrackerRelation;
   externalLink?: string;

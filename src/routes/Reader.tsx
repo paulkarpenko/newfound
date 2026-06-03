@@ -18,6 +18,7 @@ import ClauseChatPanel from '@/components/explanation/ClauseChatPanel';
 import QuestionSidebar from '@/components/explanation/QuestionSidebar';
 import AnnotationDetailModal from '@/components/detail/AnnotationDetailModal';
 import ClauseOutline from '@/components/a11y/ClauseOutline';
+import AccountButton from '@/components/auth/AccountButton';
 import { useNewfound } from '@/state/useNewfound';
 import { usePlaneZoom } from '@/lib/usePlaneZoom';
 import { corpusBounds, defaultClauseId, getClause } from '@/lib/selectors';
@@ -123,11 +124,14 @@ export default function Reader() {
         {/* "Why this exists" chat panel — tethered to a clause title by a
             leader line, draggable, lives in world space alongside the text. */}
         <ClauseChatPanel />
+
+        {/* Annotation composer — world-anchored + draggable, leader line to
+            the selection. */}
+        <Composer />
       </World>
 
       {/* Screen-space surfaces that should not scale with the plane. */}
       <AnnotatePill />
-      <Composer />
       <QuestionSidebar />
       <AnnotationDetailModal />
 
@@ -135,6 +139,7 @@ export default function Reader() {
       <Chrome zoomRef={handle} />
       <Minimap zoomRef={handle} />
       <ClauseOutline zoomRef={handle} />
+      <AccountButton />
       <FacetFilter />
 
       <div data-no-pan className="pointer-events-auto absolute bottom-4 left-4 z-30">

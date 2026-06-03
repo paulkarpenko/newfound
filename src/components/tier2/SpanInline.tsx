@@ -3,11 +3,11 @@ import * as HoverCard from '@radix-ui/react-hover-card';
 import type { Span } from '@/lib/types';
 import { getClause, useMerged } from '@/lib/dataAccess';
 import {
-  densityBucket,
-  densityColor,
-  densityLabel,
-  densityUnderlineWeight,
-} from '@/lib/density';
+  categoryColor,
+  categoryLabel,
+  categoryUnderlineWeight,
+  spanCategory,
+} from '@/lib/discussion';
 import { useNewfound } from '@/state/useNewfound';
 import { useSpanPositions } from '@/state/useSpanPositions';
 
@@ -38,6 +38,7 @@ export default function SpanInline({ span, children }: SpanInlineProps) {
   const facetTypes = useNewfound((s) => s.facetTypes);
   const facetEraMin = useNewfound((s) => s.facetEraMin);
   const facetEraMax = useNewfound((s) => s.facetEraMax);
+  const myVotes = useNewfound((s) => s.myVotes);
   const setPosition = useSpanPositions((s) => s.setPosition);
   const clearPosition = useSpanPositions((s) => s.clearPosition);
 
@@ -52,10 +53,9 @@ export default function SpanInline({ span, children }: SpanInlineProps) {
     return true;
   });
 
-  const max = merged.maxClauseCount;
-  const bucket = densityBucket(annotations.length, Math.max(max, 8));
-  const weight = densityUnderlineWeight(bucket);
-  const color = densityColor(bucket);
+  const category = spanCategory(annotations, myVotes);
+  const weight = categoryUnderlineWeight(category);
+  const color = categoryColor(category);
   const selected = selectedSpanId === span.id;
   const dimmed = facetTypes.size + (facetEraMin !== null ? 1 : 0) + (facetEraMax !== null ? 1 : 0) > 0
     ? matching.length === 0
@@ -107,7 +107,7 @@ export default function SpanInline({ span, children }: SpanInlineProps) {
           data-span-id={span.id}
           role="button"
           tabIndex={0}
-          aria-label={`${children}. ${annotations.length} annotation${annotations.length === 1 ? '' : 's'}, ${densityLabel(bucket)}. Press Enter to open panel.`}
+          aria-label={`${children}. ${annotations.length} annotation${annotations.length === 1 ? '' : 's'}, ${categoryLabel(category)} discussion. Press Enter to open panel.`}
           onClick={(e) => {
             e.stopPropagation();
             openPanel(span.id, sideForSpan(ref.current));
@@ -156,11 +156,11 @@ export default function SpanInline({ span, children }: SpanInlineProps) {
                 textTransform: 'uppercase',
                 letterSpacing: '0.14em',
                 fontSize: 10,
-                color: 'var(--nf-ink-soft)',
+                color: categoryColor(category),
                 marginBottom: 6,
               }}
             >
-              {annotations.length} annotation{annotations.length === 1 ? '' : 's'} · click to open
+              {categoryLabel(category)} · {annotations.length} annotation{annotations.length === 1 ? '' : 's'} · click to open
             </p>
             {annotations.slice(0, 2).map((a) => (
               <div key={a.id} style={{ marginBottom: 6 }}>

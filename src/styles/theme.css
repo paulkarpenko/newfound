@@ -54,6 +54,14 @@
   --nf-type-founding: #6e7e6a;
 
   --nf-focus: #2f5d97;
+
+  /* Discussion-category ramp — the underline hue encodes the *character* of
+     a span's conversation, not its raw volume. */
+  --nf-disc-quiet: rgba(33, 30, 24, 0.22);
+  --nf-disc-emerging: #6e8fae;
+  --nf-disc-popular: #3f7d52;
+  --nf-disc-debated: #c89148;
+  --nf-disc-controversial: #c4663b;
 }
 
 [data-theme='dark'] {
@@ -87,6 +95,12 @@
   --nf-type-founding: #8a9a86;
 
   --nf-focus: #6a9fde;
+
+  --nf-disc-quiet: rgba(232, 224, 207, 0.26);
+  --nf-disc-emerging: #7fa6c9;
+  --nf-disc-popular: #5fae78;
+  --nf-disc-debated: #d8a24a;
+  --nf-disc-controversial: #e08654;
 }
 
 @keyframes nf-cursor-blink {

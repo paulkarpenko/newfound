@@ -1,6 +1,7 @@
 import { findConcept } from '@/lib/concepts';
 import { getClause } from '@/lib/dataAccess';
 import { useNewfound } from '@/state/useNewfound';
+import { useAuth } from '@/state/useAuth';
 
 /**
  * Floating selection toolbar that appears next to a text selection. Two
@@ -13,11 +14,24 @@ export default function AnnotatePill() {
   const openComposer = useNewfound((s) => s.openComposer);
   const openExplanation = useNewfound((s) => s.openExplanation);
   const cancel = useNewfound((s) => s.cancelComposing);
+  const isAuthed = useAuth((s) => s.status === 'authed');
+  const openAuthModal = useAuth((s) => s.openAuthModal);
 
   if (!selection || composerOpen) return null;
 
   const left = selection.screenX + 6;
   const top = selection.screenY + 6;
+
+  // Only signed-in readers can annotate. Anonymous readers get a sign-in
+  // prompt instead; the selection is dismissed so the modal isn't obscured.
+  const onAnnotate = () => {
+    if (!isAuthed) {
+      cancel();
+      openAuthModal('login');
+      return;
+    }
+    openComposer();
+  };
 
   const onExplain = () => {
     // If a static concept matches, hand it to the panel — fast, free, offline.
@@ -76,7 +90,7 @@ export default function AnnotatePill() {
       aria-label="Annotate or explain selection"
     >
       <PillButton
-        onClick={openComposer}
+        onClick={onAnnotate}
         ariaLabel="Annotate the selected text"
         glyph="＋"
         label="annotate"

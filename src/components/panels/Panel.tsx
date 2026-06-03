@@ -31,7 +31,10 @@ const TYPE_LABEL: Record<string, string> = {
 export default function Panel({ laid, expanded, panelHeight, onDragEnd, worldScale }: PanelProps) {
   const merged = useMerged();
   const span = merged.getSpan(laid.spanId);
-  const annotations = span ? merged.annotationsForSpan(span.id) : [];
+  // Top-level comments only — replies live in the threaded detail view.
+  const annotations = span
+    ? merged.annotationsForSpan(span.id).filter((a) => !a.parentId)
+    : [];
   const closePanel = useNewfound((s) => s.closePanel);
   const togglePanelExpanded = useNewfound((s) => s.togglePanelExpanded);
   const selectSpan = useNewfound((s) => s.selectSpan);

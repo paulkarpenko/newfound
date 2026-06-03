@@ -62,6 +62,10 @@ interface NewfoundState {
   userSpans: Span[];
   userAnnotations: Annotation[];
 
+  /** The local reader's vote on each annotation (reddit-style). Persisted
+   *  to localStorage so a refresh keeps your up/down choices. */
+  myVotes: Record<string, 1 | -1>;
+
   /** A captured selection waiting for the user to click the "annotate" pill. */
   composerSelection: ComposerSelection | null;
   /** Whether the composer dialog is actually open (after the pill is clicked). */
@@ -122,6 +126,9 @@ interface NewfoundState {
   ): void;
   addAnnotationToSpan(spanId: string, annotation: Annotation): void;
   removeAnnotation(annotationId: string): void;
+  /** Toggle the local reader's vote on an annotation. Re-casting the same
+   *  direction clears it (like reddit). */
+  voteAnnotation(annotationId: string, dir: 1 | -1): void;
 
   startComposing(selection: ComposerSelection): void;
   cancelComposing(): void;
@@ -225,6 +232,27 @@ export interface ComposerSelection {
   worldY: number;
 }
 
+const VOTES_KEY = 'newfound.votes';
+
+function loadVotes(): Record<string, 1 | -1> {
+  try {
+    const raw = localStorage.getItem(VOTES_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw);
+    return parsed && typeof parsed === 'object' ? (parsed as Record<string, 1 | -1>) : {};
+  } catch {
+    return {};
+  }
+}
+
+function saveVotes(votes: Record<string, 1 | -1>): void {
+  try {
+    localStorage.setItem(VOTES_KEY, JSON.stringify(votes));
+  } catch {
+    // ignore quota / unavailable storage
+  }
+}
+
 export const useNewfound = create<NewfoundState>((set) => ({
   transform: { x: 0, y: 0, k: 1 },
   tier: 2,
@@ -235,6 +263,7 @@ export const useNewfound = create<NewfoundState>((set) => ({
   facetEraMax: null,
   userSpans: [],
   userAnnotations: [],
+  myVotes: loadVotes(),
   composerSelection: null,
   composerOpen: false,
   detailSpanId: null,
@@ -376,12 +405,23 @@ export const useNewfound = create<NewfoundState>((set) => ({
 
   removeAnnotation: (annotationId) =>
     set((s) => ({
-      userAnnotations: s.userAnnotations.filter((a) => a.id !== annotationId),
+      userAnnotations: s.userAnnotations.filter(
+        (a) => a.id !== annotationId && a.parentId !== annotationId,
+      ),
       userSpans: s.userSpans.map((sp) => ({
         ...sp,
         annotationIds: sp.annotationIds.filter((id) => id !== annotationId),
       })),
     })),
+
+  voteAnnotation: (annotationId, dir) =>
+    set((s) => {
+      const next = { ...s.myVotes };
+      if (next[annotationId] === dir) delete next[annotationId];
+      else next[annotationId] = dir;
+      saveVotes(next);
+      return { myVotes: next };
+    }),
 
   startComposing: (selection) =>
     set({ composerSelection: selection, composerOpen: false }),
